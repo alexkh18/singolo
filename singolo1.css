@@ -1,0 +1,18 @@
+/*---------------------------------temp---------------------------------*/
+html {
+    background-color: red;
+}
+body {
+    background-color: blue;
+    height: 1000px;
+    max-width: 1020px;
+    font-size: 16px;
+}
+header {
+    background-color: green;
+}
+
+main {
+    background-color: yellow;
+    height: 400px;
+}
