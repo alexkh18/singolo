@@ -1,0 +1,19 @@
+{
+  "name": "singolo",
+  "version": "1.0.0",
+  "description": "Stage1: \"Singolo\" task",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexkh18/singolo.git"
+  },
+  "author": "Aliaksandr Khudnitski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexkh18/singolo/issues"
+  },
+  "homepage": "https://github.com/alexkh18/singolo#readme"
+}
