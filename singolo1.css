@@ -16,3 +16,42 @@ main {
     background-color: yellow;
     height: 400px;
 }
+/*---------------------------------header---------------------------------*/
+.header__top {
+    font-family: 'lato';
+    display: flex;
+    justify-content: space-between;
+    background-color: pink;
+
+    background-color: rgb(45, 48, 58);
+    height: 89px;
+}
+
+.header-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  
+    list-style-type: none;
+}
+
+.header-nav__item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    background-color: orange;
+}
+
+.header-nav__link {
+    color: white;
+    text-decoration: none;
+}
+
+.header-nav__decor {
+    margin: 0 10px;
+    line-height: 9px;
+    text-align: center;
+}
