@@ -1,12 +1,14 @@
 /*---------------------------------temp---------------------------------*/
 html {
     background-color: red;
+    font-size: 12px;
 }
 body {
     background-color: blue;
     height: 1000px;
     max-width: 1020px;
-    font-size: 16px;
+
+    margin: 0 auto;
 }
 header {
     background-color: green;
@@ -16,24 +18,52 @@ main {
     background-color: yellow;
     height: 400px;
 }
+/*----------------fonts--------------*/
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
 /*---------------------------------header---------------------------------*/
+h1,
+h2 {
+    font-size: inherit;
+}
+
+.color-red {
+    color: #f06c64;
+}
+
 .header__top {
     font-family: 'lato';
     display: flex;
     justify-content: space-between;
-    background-color: pink;
+    color: white;
 
     background-color: rgb(45, 48, 58);
     height: 89px;
 }
 
+.header__logo {
+    display: flex;
+    align-items: center;
+    margin-left: 41px;
+    letter-spacing: -0.7px;
+    line-height: 25px;
+    font-size: 25px;
+}
+
 .header-nav {
+    position: relative;
+    top: 45px;
+    height: 10px;
+    left: -40px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     margin: 0;
-    padding: 0;
-  
     list-style-type: none;
 }
 
@@ -41,17 +71,29 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
-    background-color: orange;
 }
 
 .header-nav__link {
-    color: white;
     text-decoration: none;
+
+    letter-spacing: -0.2px;
+    height: 10px;
+    line-height: 10px;
+    color: #ffffff;
+}
+
+.header-nav__link:hover {
+    color: #f06c64;
 }
 
 .header-nav__decor {
-    margin: 0 10px;
-    line-height: 9px;
+    width: 30px;
+    line-height: 6px;
     text-align: center;
+    color: #494e62;
+}
+
+.header__bottom {
+    height: 6px;
+    background-color: #323746;
 }
