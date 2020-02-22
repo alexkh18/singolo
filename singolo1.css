@@ -1,11 +1,9 @@
 /*---------------------------------temp---------------------------------*/
 html {
-    background-color: red;
     font-size: 12px;
 }
 body {
     background-color: blue;
-    height: 1000px;
     max-width: 1020px;
 
     margin: 0 auto;
@@ -16,7 +14,7 @@ header {
 
 main {
     background-color: yellow;
-    height: 400px;
+    /* height: 100px; */
 }
 /*----------------fonts--------------*/
 @font-face {
@@ -96,4 +94,79 @@ h2 {
 .header__bottom {
     height: 6px;
     background-color: #323746;
+}
+
+/*---------------------------------main_slider---------------------------------*/
+.slider__top {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #f06c64;
+    height: 594px;
+}
+
+.slider__left-arrow{
+    flex-basis: 10%;
+}
+
+.slider__left-img {
+    flex-basis: 22%;
+}
+.slider__right-img{
+    flex-basis: 58%;
+}
+
+.slider__right-arrow{
+    flex-basis: 10%;
+}
+
+.slider__left-arrow .arrow-img {
+    margin-top: 281px;
+    margin-left: 42px;
+}
+
+.slider__right-arrow .arrow-img {
+    margin-top: 281px;
+    margin-left: 47px;
+    transform: rotate(180deg);
+}
+
+.slider__left-img .img-container,
+.slider__right-img .img-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slider__left-img .first-img {
+    border-radius: 27px;
+    top: 53px;
+    left: 10px;
+    position: absolute;
+    z-index: 1;
+}
+
+.slider__left-img .shadow-img {
+    position: absolute;
+    top: 53px;
+    left: 10px;
+}
+
+.slider__right-img .second-img {
+    top: 174px;
+    right: 34px;
+    border-radius: 27px;
+    position: absolute;
+    z-index: 1;
+}
+
+.slider__right-img .shadow-img {
+    position: absolute;
+    top: 53px;
+    right: 130px;
+    transform: scale(-1, 1) rotate(90deg);
+}
+
+.slider__bottom {
+    height: 6px;
+    background-color: #ea676b;
 }
