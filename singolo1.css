@@ -121,13 +121,12 @@ h2 {
 
 .slider__left-arrow .arrow-img {
     margin-top: 281px;
-    margin-left: 42px;
+    margin-left: 8px;
 }
 
 .slider__right-arrow .arrow-img {
     margin-top: 281px;
-    margin-left: 47px;
-    transform: rotate(180deg);
+    margin-left: 30px;
 }
 
 .slider__left-img .img-container,
@@ -169,4 +168,14 @@ h2 {
 .slider__bottom {
     height: 6px;
     background-color: #ea676b;
+}
+
+.slider__left-arrow .color-filtered-arrow:hover {
+  filter: url(#white-filter);
+  transform: translate(-5px);
+}
+
+.slider__right-arrow .color-filtered-arrow:hover {
+  filter: url(#white-filter);
+  transform: translate(5px);
 }
