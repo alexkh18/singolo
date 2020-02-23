@@ -1,42 +1,26 @@
-/*---------------------------------temp---------------------------------*/
+/*---------------------------------general---------------------------------*/
 html {
-    font-size: 12px;
+  font-size: 12px;
 }
+
 body {
-    background-color: blue;
-    max-width: 1020px;
-
-    margin: 0 auto;
-}
-header {
-    background-color: green;
+  max-width: 1020px;
+  margin: 0 auto;
 }
 
-main {
-    background-color: yellow;
-    /* height: 100px; */
-}
-/*----------------fonts--------------*/
-@font-face {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  }
-/*---------------------------------header---------------------------------*/
 h1,
 h2 {
     font-size: inherit;
 }
 
 .color-red {
-    color: #f06c64;
+  color: #f06c64;
 }
 
+/*---------------------------------header---------------------------------*/
 .header__top {
-    font-family: 'lato';
+    font-family: 'Lato', "Arial Black", sans-serif;
+    font-weight: 700;
     display: flex;
     justify-content: space-between;
     color: white;
@@ -178,4 +162,120 @@ h2 {
 .slider__right-arrow .color-filtered-arrow:hover {
   filter: url(#white-filter);
   transform: translate(5px);
+}
+
+/*---------------------------------main_services---------------------------------*/
+.services {
+  background-color: #f2f2f2;
+}
+
+.services__top {
+  height: 494px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 3.92%;
+  margin-right: 3.92%;
+}
+
+.services__title {
+  margin-top: 69px;
+  margin-bottom: 27px;
+  font-size: 2.5rem;
+  font-family: 'Lato', "Arial Black", sans-serif;
+  font-weight: 900;
+  color: rgb(102, 109, 137);
+  line-height: 0.595;
+  letter-spacing: -0.2px;
+}
+
+.services__description p{
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+.services__description {
+    font-size: 1.5rem;
+    font-family: 'Lato', "Arial", sans-serif;
+    font-weight: 300;
+    color: rgb(118, 126, 158);
+    line-height: 1.667;
+    margin-bottom: 30px;
+}
+
+.services__description > p:nth-child(1){
+  letter-spacing: 0.15px;
+}
+
+.services__description > p:nth-child(2){
+  letter-spacing: 0px;
+}
+
+/*---------------------------------main_services_advantages---------------------------------*/
+.services__advantages{
+  padding-left: 3px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.advantages__column {
+  width: 100%;
+
+}
+.first-col {
+margin-left: -1px;
+}
+.second-col,
+.third-col {
+  margin-left: 19px;
+}
+
+.advantages__column__item {
+  margin-top: 10px;
+  margin-bottom: 27px;
+  display: flex;
+  height: 96px;
+}
+.col-item__icon{
+  margin-top: 7px;
+  flex-basis: 20%;
+}
+
+.col-item__body{
+  flex-basis: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 19px;
+  justify-content: flex-start;
+}
+
+.col-item__title {
+  margin-top: 5px;
+  font-family: 'Lato', "Arial Black", sans-serif;
+  font-weight: 900;
+  color: rgb(102, 109, 137);
+  font-size: 1.5rem;
+  line-height: 18px;
+  height: 18px;
+  letter-spacing: -0.1px;
+}
+
+.col-item__description {
+  margin-top: 10px;
+  font-family: 'Lato', "Arial Black", sans-serif;
+  font-weight: 400;
+  color: rgb(118, 126, 158);
+  font-size: 1rem;
+  line-height: 22px;
+  text-align: justify;
+
+}
+
+.third-col .col-item__title,
+.third-col .col-item__description {
+  margin-left: 3px;
+}
+
+.services__bottom {
+  height: 6px;
+  background-color: #ffffff;
 }
