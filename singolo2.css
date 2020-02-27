@@ -1,0 +1,44 @@
+/*---------------------------------general---------------------------------*/
+html {
+  font-size: 12px;
+}
+
+body {
+  max-width: 1020px;
+  margin: 0 auto;
+  background-color: gray;
+}
+
+h1,
+h2 {
+  font-size: inherit;
+}
+
+.color-red {
+  color: #f06c64;
+}
+
+main {
+  overflow: hidden;
+}
+
+.content-wrapper {
+  margin: 0 3.92%;
+  border: 5px black solid;
+}
+
+/*---------------------------------main_portfolio---------------------------------*/
+
+.portfolio {
+  display: flex;
+  height: 870px;
+  background-color: indianred;
+}
+
+/*---------------------------------main_about---------------------------------*/
+
+.about {
+  display: flex;
+  height: 734px;
+  background-color: khaki;
+}
