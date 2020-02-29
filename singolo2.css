@@ -18,25 +18,108 @@ h2 {
   color: #f06c64;
 }
 
-main {
+/*---------------------------------main---------------------------------*/
+.section-title {
+  margin: 28px 0 15px 0;
+  font-weight: 900;
+  font-size: 2.5rem;
+  line-height: 0.595em;
+  font-family: "Lato", "Arial Black", sans-serif;
+  color: #666d89;
+  letter-spacing: -0.2px;
+}
+
+.section-description {
+  margin: 28px 0 5px 0;
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 1.667em;
+  font-family: "Lato", "Arial", sans-serif;
+  color: #6c7491;
+}
+
+/*---------------------------------main__portfolio---------------------------------*/
+.portfolio {
+  height: 870px;
+}
+
+.portfolio__top {
+  height: 864px;
+  background-color: #2d303a;
+}
+
+.portfolio__bottom {
+  height: 6px;
+
+  background-color: #323746;
+}
+
+.portfolio__title {
+  padding-top: 41px;
+  margin-left: 40px;
+}
+
+
+.portfolio__description,
+.portfolio__nav {
+  margin-left: 40px;
+}
+
+.portfolio-nav {
+  margin: 0;
+  padding: 0;
+  margin-top: 11px;
+  margin-left: 2px;
+  display: flex;
+  list-style-type: none;
+}
+
+.portfolio-nav__item {
+  display: flex;
+
+  margin-right: 10px;
+
+  font-size: 12px;
+  font-family: "Lato";
+  font-weight: 400;
+  color: #6c7491;
+  line-height: 1.65;
+  text-align: justify;
+}
+
+.portfolio-nav__link {
+  border-radius: 4px;
+  text-decoration: none;
+  color: #6c7491;
+  border: 1px solid #6c7491;
+  padding: 0 6px;
+  letter-spacing: -0.06px;
+}
+
+.portfolio-nav__link:hover {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+
+/*---------------------------------main__portfolio__gallery---------------------------------*/
+.portfolio__gallery {
+  display: flex;
+  justify-content: start;
+  margin-left: 30px;
+  margin-top: 1px;
+}
+
+.gallery__column {
+  max-height: 621px;
   overflow: hidden;
 }
 
-.content-wrapper {
-  margin: 0 3.92%;
-  border: 5px black solid;
+.gallery__item {
+  margin: 19px 10px 0 10px;
+  height: 188px;
 }
 
-/*---------------------------------main_portfolio---------------------------------*/
-
-.portfolio {
-  display: flex;
-  height: 870px;
-  background-color: indianred;
-}
-
-/*---------------------------------main_about---------------------------------*/
-
+/*---------------------------------main__about---------------------------------*/
 .about {
   display: flex;
   height: 734px;
