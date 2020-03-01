@@ -6,6 +6,7 @@ html {
 body {
   max-width: 1020px;
   margin: 0 auto;
+
   background-color: gray;
 }
 
@@ -15,15 +16,16 @@ h2 {
 }
 
 p {
-  margin: 0 0;
+  margin: 0;
 }
 
 /*---------------------------------main---------------------------------*/
 .section-title {
   margin: 28px 0 15px 0;
+
   font-weight: 900;
   font-size: 2.5rem;
-  line-height: 0.595em;
+  line-height: 0.595;
   font-family: "Lato", "Arial Black", sans-serif;
   color: #666d89;
   letter-spacing: -0.2px;
@@ -31,17 +33,18 @@ p {
 
 .section-description {
   margin: 28px 0 5px 0;
+
   font-weight: 300;
   font-size: 1.5rem;
-  line-height: 1.667em;
+  line-height: 1.667;
   font-family: "Lato", "Arial", sans-serif;
   color: #6c7491;
 }
 
 .column-title {
-  line-height: 0.992;
   font-weight: 900;
   font-size: 1.5rem;
+  line-height: 0.992;
   font-family: "Lato", "Arial Black", sans-serif;
   color: #666d89;
   letter-spacing: -0.15px;
@@ -49,11 +52,11 @@ p {
 
 .column-description {
   font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.797;
   font-family: "Lato", "Arial Black", sans-serif;
   text-align: justify;
   color: #767e9e;
-  font-size: 12px;
-  line-height: 1.797;
 }
 
 /*---------------------------------main__portfolio---------------------------------*/
@@ -63,6 +66,7 @@ p {
 
 .portfolio__top {
   height: 864px;
+
   background-color: #2d303a;
 }
 
@@ -73,8 +77,8 @@ p {
 }
 
 .portfolio__title {
-  padding-top: 41px;
   margin-left: 40px;
+  padding-top: 41px;
 }
 
 
@@ -84,47 +88,45 @@ p {
 }
 
 .portfolio-nav {
-  margin: 0;
-  padding: 0;
-  margin-top: 11px;
-  margin-left: 2px;
   display: flex;
+  margin: 11px 0 0 2px;
+  padding: 0;
+
   list-style-type: none;
 }
 
 .portfolio-nav__item {
   display: flex;
-
   margin-right: 10px;
 
-  font-size: 12px;
-  font-family: "Lato";
   font-weight: 400;
-  color: #6c7491;
+  font-size: 1rem;
   line-height: 1.65;
-  text-align: justify;
+  font-family: "Lato";
+  color: #6c7491;
 }
 
 .portfolio-nav__link {
-  border-radius: 4px;
-  text-decoration: none;
-  color: #6c7491;
-  border: 1px solid #6c7491;
   padding: 0 6px;
+
+  color: #6c7491;
+  text-decoration: none;
   letter-spacing: -0.06px;
+
+  border: 1px solid #6c7491;
+  border-radius: 5px;
 }
 
 .portfolio-nav__link:hover {
-  border: 1px solid #ffffff;
   color: #ffffff;
+
+  border: 1px solid #ffffff;
 }
 
 /*---------------------------------main__portfolio__gallery---------------------------------*/
 .portfolio__gallery {
   display: flex;
-  justify-content: start;
-  margin-left: 30px;
-  margin-top: 1px;
+  margin: 1px 0 0 30px;
 }
 
 .gallery__column {
@@ -133,50 +135,41 @@ p {
 }
 
 .gallery__item {
-  margin: 19px 10px 0 10px;
   height: 188px;
+  margin: 19px 10px 0 10px;
 }
 
 /*---------------------------------main__about---------------------------------*/
 .about__top {
   display: flex;
   flex-direction: column;
-  background-color: #f2f2f2;
   height: 728px;
+
+  background-color: #f2f2f2;
 }
 
 .about__bottom {
-  background-color: #ffffff;
   height: 6px;
-}
 
-.about__title,
-.about__description {
-  margin-left: 40px;
-  margin-right: 40px;
+  background-color: #ffffff;
 }
 
 .team-member__column {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 0 10px;
 }
 
 .about__team {
   display: flex;
-  justify-content: start;
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-top: 45px;
+  margin: 45px 30px 0 30px;
 }
 
 .about__title {
-  margin-top: 41px;
-  margin-bottom: 5px;
+  margin: 41px 40px 5px 40px;
 }
 
 .about__description {
-  margin-top: 7px;
-  margin-bottom: 0;
+  margin: 7px 40px 0 40px;
+
   line-height: 1.667;
 }
 
@@ -204,18 +197,15 @@ p {
 }
 
 .social-link_icon {
-  margin-top: 24px;
-  margin-right: 6px;
+  margin: 24px 6px 0 0;
+}
+
+.social-link_icon:hover {
+  transform: scale(1.15);
+  cursor: pointer;
+  filter: grayscale(100%) brightness(70%) contrast(5);
 }
 
 .team-member__column:nth-of-type(3) .team-member__social-link {
   margin-right: 141px;
-}
-
-.social-link_icon:hover {
-  margin-top: 24px;
-  margin-right: 6px;
-  filter: grayscale(100%) brightness(70%) contrast(5);
-  transform: scale(1.15);
-  cursor: pointer;
 }
