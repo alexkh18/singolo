@@ -211,3 +211,11 @@ p {
 .team-member__column:nth-of-type(3) .team-member__social-link {
   margin-right: 141px;
 }
+
+.social-link_icon:hover {
+  margin-top: 24px;
+  margin-right: 6px;
+  filter: grayscale(100%) brightness(70%) contrast(5);
+  transform: scale(1.15);
+  cursor: pointer;
+}
