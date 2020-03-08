@@ -22,7 +22,7 @@ p {
 
 /*---------------------------------main---------------------------------*/
 .section-title {
-  margin: 28px 0 15px 0;
+  margin: 29px 0 15px 0;
 
   font-weight: 900;
   font-size: 2.5rem;
@@ -69,7 +69,7 @@ h3 {
 
 .quote-section {
   background-color: #f06c64;
-  height: 648px;
+  height: 647px;
   border-bottom: 6px solid #ea676b;
 }
 
@@ -108,11 +108,11 @@ h3 {
 
 .quote__form {
   flex-basis: 65.9%;
-  margin-top: 18px;
+  margin-top: 17px;
   height: 400px;
-  /* background-color: grey; */
-  /* padding-top: 28px; */
+
 }
+
 .quote__form form{
   display: flex;
   flex-direction: column;
@@ -165,12 +165,11 @@ h3 {
   transform: scale(1.015);
   font-weight: 900;
 }
+
 .quote__contact-info {
   flex-basis: 32%;
   margin-top: 26px;
   height: 100px;
-  /* background-color: yellow; */
-  /* padding-top: 28px; */
 }
 
 .contact-info__title {
@@ -183,7 +182,6 @@ h3 {
   margin-top: 11px;
   letter-spacing: -0.15px;
 
-  /* line-height: 1.797; */
   line-height: 1.8;
   font-family: "Lato";
   color: #f0d8d9;
@@ -194,9 +192,6 @@ h3 {
 }
 
 .quote__form form *:focus {
-  /* border: 2px solid white; */
-  /* outline-width: 3px;
-  outline-color: white; */
   border: 2px solid #ffffff;
   outline: none;
 }
@@ -213,6 +208,7 @@ h3 {
   justify-content: space-around;
   height: 64px;
 }
+
 .contact-info__location,
 .contact-info__phone,
 .contact-info__email {
@@ -243,7 +239,6 @@ h3 {
   font-family: "Lato", "Arial Black", sans-serif;
   text-align: justify;
   color: #f0d8d9;
-  /* line-height: 1.8; */
 }
 
 .contact-info__text > a {
@@ -253,4 +248,35 @@ h3 {
 
 .contact-info__text > a:hover {
   color: white;
+}
+
+/*---------------------------------footer---------------------------------*/
+footer {
+  background-color: #2d303a;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 40px;
+  height: 76px;
+  align-items: center;
+  letter-spacing: 0.4px;
+  color: #666d89;
+}
+
+.footer__social-links {
+  display: flex;
+  list-style-type: none;
+}
+
+.social-link_icon {
+  margin-left: 8px;
+  margin-top: 2px;
+}
+
+.footer .social-link_icon:hover {
+  transform: scale(1.15);
+  cursor: pointer;
+  filter: invert(52%) sepia(49%) saturate(575%) hue-rotate(316deg) brightness(94%) contrast(101%);
 }
