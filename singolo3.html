@@ -24,17 +24,44 @@
         <div class="quote-container">
           <div class="quote__form">
             <form class action="" method="post">
-              <input type="text" name="" id="fname">
-              <input type="email" name="" id="">
-              <input type="text" name="" id="">
-              <textarea name="" id="" cols="30" rows="10"></textarea>
+              <input type="text" name="userName" value="" id="" placeholder="Name (Required)" pattern="[A-Za-z]{1}[A-Za-z' -\.]{0,30}" required>
+              <input type="email" name="email" value="" id="" placeholder="Email (Required)" required>
+              <input type="text" name="subject" value="" id="" placeholder="Subject" >
+              <textarea name="projectDetail" id="" cols="30" rows="10" placeholder="Describe your project in detail..."></textarea>
+              <button class="submit-btn" type="submit">Send</button>
+              <!-- <button type="text" name="submit" value="">Send</button> -->
             </form>
           </div>
           <div class="quote__contact-info">
-            <div class="contact-info__title column-title">Contact Information</div>
+            <div class="contact-info__title column-title"><h3>Contact Information</h3> </div>
+            <!-- <div class="contact-info__title column-title">Contact Information</div> -->
             <div class="contact-info__description column-description">
               <p>Quisque hendrerit purus dapibus, ornare nibh vitae, viver-ra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero.
                 Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequal felis.</p>
+            </div>
+            <div class="contact-info__credentials">
+              <div class="contact-info__location">
+                <div class="contact-info__icon-area">
+                  <img class="contact-info__icon" src="./assets/images/quote/quote_location_icon.png" alt="portfolio image" width="7" height="11">
+                </div>
+                <div class="contact-info__text">Elm St. 14/05 Lost City</div>
+              </div>
+              <div class="contact-info__phone">
+                <div class="contact-info__icon-area">
+                  <img class="contact-info__icon" src="./assets/images/quote/quote_phone_icon.png" alt="portfolio image" width="11" height="11">
+                </div>
+                <div class="contact-info__text">
+                  <a href="tel:035283318635">03528 331 86 35</a>
+                </div>
+              </div>
+              <div class="contact-info__email">
+                <div class="contact-info__icon-area">
+                  <img class="contact-info__icon" src="./assets/images/quote/quote_email_icon.png" alt="portfolio image" width="13" height="8">
+                </div>
+                <div class="contact-info__text">
+                  <a href="mailto:info@singolo.com">info@singolo.com</a>
+                </div>
+              </div>
             </div>
             <!--  -->
           </div>
