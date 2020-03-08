@@ -1,0 +1,146 @@
+/*---------------------------------general---------------------------------*/
+html {
+  font-size: 12px;
+}
+
+h1,
+h2 {
+  font-size: inherit;
+}
+
+
+
+p {
+  margin: 0;
+}
+
+.content-wrapper {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/*---------------------------------main---------------------------------*/
+.section-title {
+  margin: 28px 0 15px 0;
+
+  font-weight: 900;
+  font-size: 2.5rem;
+  line-height: 0.595;
+  font-family: "Lato", "Arial Black", sans-serif;
+  color: #666d89;
+  letter-spacing: -0.2px;
+}
+
+.section-description {
+  margin: 28px 0 5px 0;
+
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 1.667;
+  font-family: "Lato", "Arial", sans-serif;
+  color: #6c7491;
+}
+
+.column-title {
+  font-weight: 900;
+  font-size: 1.5rem;
+  line-height: 0.992;
+  font-family: "Lato", "Arial Black", sans-serif;
+  color: #666d89;
+  letter-spacing: -0.15px;
+}
+
+.column-description {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.797;
+  font-family: "Lato", "Arial Black", sans-serif;
+  text-align: justify;
+  color: #767e9e;
+}
+
+/*---------------------------------main__portfolio---------------------------------*/
+.quote-section {
+  background-color: #f06c64;
+  height: 648px;
+}
+
+.quote__title {
+  margin-left: 40px;
+  margin-right: 40px;
+  padding-top: 43px;
+  margin-bottom: 18px;
+  letter-spacing: 0.02px;
+}
+
+.quote__description {
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 28px;
+  margin-bottom: 18px;
+
+  color: rgb(240, 216, 217);
+}
+
+.quote__description span {
+  display: block;
+}
+
+.quote__description span:nth-child(1) {
+  text-align-last: justify;
+}
+
+.quote-container {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.quote__form {
+  flex-basis: 65.9%;
+  margin-top: 18px;
+  height: 400px;
+  /* background-color: grey; */
+  /* padding-top: 28px; */
+}
+.quote__form form{
+  display: flex;
+  flex-direction: column;
+}
+.quote__form input,
+.quote__form textarea {
+  /* margin-bottom: 16px;*/
+  padding: 0;
+  margin: 8px 0;
+    border-radius: 5px;
+    background-color: rgb(214, 86, 79);
+
+    /* width: 619px; */
+    height: 38px;
+    border-style: none;
+  /* display: block;
+  width: 100%; */
+}
+
+.quote__contact-info {
+  flex-basis: 32%;
+  margin-top: 26px;
+  height: 100px;
+  /* background-color: yellow; */
+  /* padding-top: 28px; */
+}
+
+.contact-info__title {
+  margin-left: 1px;
+}
+
+.contact-info__description {
+  margin-left: 1px;
+  margin-top: 10px;
+  letter-spacing: -0.15px;
+
+  line-height: 1.797;
+
+}
