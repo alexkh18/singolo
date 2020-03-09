@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fonts.css">
+  <title>Singolo</title>
+</head>
+<body>
+  <header>
+    <div class="content-wrapper">
+      <div class="header">
+        <div class="header__logo">
+          <h1>SINGOLO</h1>
+          <span class="color-red">*</span>
+        </div>
+        <div class="header__nav">
+          <ul class="header-nav">
+            <li class="header-nav__item">
+              <a class="header-nav__link color-red" href="">HOME</a>
+              <div class="header-nav__decor">.</div>
+            </li>
+            <li class="header-nav__item">
+              <a class="header-nav__link" href="">SERVICES</a>
+              <div class="header-nav__decor">.</div>
+            </li>
+            <li class="header-nav__item">
+              <a class="header-nav__link" href="">PORTFOLIO</a>
+              <div class="header-nav__decor">.</div>
+            </li>
+            <li class="header-nav__item">
+              <a class="header-nav__link" href="">ABOUT</a>
+              <div class="header-nav__decor">.</div>
+            </li>
+            <li class="header-nav__item">
+              <a class="header-nav__link" href="">CONTACT</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="slider-section">
+      <div class="content-wrapper">
+        <div class="slider">
+          <div class="slider__left-arrow">
+            <svg class="arrow-img" width="50" height="27" viewBox="0 0 16 27" >
+              <defs>
+                <filter id="white-filter">
+                  <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0"/>
+                </filter>
+                <image id="left-arrow" width="50" height="27" href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAbCAYAAAB1NA+iAAABg0lEQVQ4jZXVv0tXURzG8Zc/NrMtoyEatP4EW5oEiUiKECUMGipxLytqb+jXYENLQWiJEgoKNThEY2CDQwkGRWtSBEVEVEOcODe+XM4539sDd7j3uZ83z+eccz+3Y334iIbqxBWM4ifuh6u7aTUe4HTL/UF86mxYfKtWXOl4E8B1XMh4W+0A13Ap473AvRLgPK5mvE2cwOccIES+nfHehN6xLW5NXefioqW0hRG8q7w64BTuZoo/YAxvWx+2noOTmEVXojjEPYbXdaNKcDierFLxy1SsABjCY/Qk/G+xrfVMW38BM9iZ8D7Gtp7liivAQMabx9NScQV4lfEmY4K2gKm4RXX1xIU92g6wgQl8zUAWSpBqG59jPAPpxSIOlQBBa3HLfiXe24ElDJYAQU9wJgPZjZU6JPUxPcJZ/E54e2KS/SVA0MPCFNobkw6UAEF3MJ3xDmAVfV2T/f/SpBTG1ncMJ8xd+NJkqN7EjYy3r+lYv5yZUsv/82O5iPdxHv7AHNb+ALewRq334YEJAAAAAElFTkSuQmCC"/>
+              </defs>
+              <use class="color-filtered-arrow" href="#left-arrow"></use>
+            </svg>
+          </div>
+          <div class="slider__left-img">
+            <div class="img-container">
+              <img class="first-img" src="./assets/images/iPhone_vertical.jpg" alt="vertical phone image" width="215" height="458">
+              <img class="shadow-img" src="./assets/images/iPhone_shadow.png" alt="phone image shadow">
+            </div>
+          </div>
+          <div class="slider__right-img">
+            <div class="img-container">
+              <img class="second-img" src="./assets/images/iPhone_horizontal.jpg" alt="horizontal phone image" width="458" height="215">
+              <img class="shadow-img" src="./assets/images/iPhone_shadow.png" alt="phone image shadow">
+            </div>
+          </div>
+          <div class="slider__right-arrow">
+            <svg class="arrow-img" width="50" height="27" viewBox="0 0 16 27" >
+              <defs>
+                <image id="right-arrow" width="16" height="27" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAbCAYAAAB1NA+iAAABg0lEQVQ4jY3VT4hOURjH8Q9mpEaWZCGbYWFnY2WlJI2YqSFRlD/ZG1H2kpmxYDGbsdGMZpooisUsJks1FhYoij0pC82OpEfnrbe3+5x7f3U353d+33vOee59zqb1o8fhSnm24hnu4q8OGsI45vumHsR+XOwC2IxTDeMXMNsV8CnxpnCvCyCW/ybxb+JOG+AnJvAxmXMb12uA0PdyFp+TeffLllJA6CtOVM5ktpQ6BYS+4DS+JZA5nK8BQh9wsmxrUMN4jLM1QOhtBbIFj3CsBgitl+VuNHgjWMGRGiC0Vpb7o8HbgQdtgNArPEm80S6AWMHVxHvfBhgrBzbS4EWpr9UAEV5Kwr9wDu+GkvBhLGN7Ej6D15IyHsLTJPy7lHa1NzAIiPBz7ErCl/Cyf7AfsK+8eXdD+A8uY3HQ6AFGC3lPQ1j5lReajADsxIvSSJt0Aw8T7z8gPpIDiR8tLZpJqgDsTdxpzNTCPUBcJIOK7nOrLRyKDylqOlnugm3lPKLztAv/AAFNQs/joGZ7AAAAAElFTkSuQmCC"/>
+              </defs>
+              <use class="color-filtered-arrow" href="#right-arrow"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="services-section">
+      <div class="content-wrapper">
+        <div class="services">
+          <h2 class="services__title title">Our Services</h2>
+          <div class="services__description">
+            <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor</p>
+            <p>ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+          </div>
+          <div class="services__advantages">
+            <div class="advantages__column first-col">
+              <div class="advantages__column__item">
+                <div class="col-item__icon">
+                  <img src="./assets/images/custom_design_icon.png" alt="123" height="59" width="59">
+                </div>
+                <div class="col-item__body">
+                  <div class="col-item__title">Custom Design</div>
+                  <div class="col-item__description">
+                    Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.
+                  </div>
+                </div>
+              </div>
+              <div class="advantages__column__item">
+                <div class="col-item__icon">
+                  <img src="./assets/images/responsive_layout_icon.png" alt="123" height="59" width="59">
+                </div>
+                <div class="col-item__body">
+                  <div class="col-item__title">Responsive Layout</div>
+                  <div class="col-item__description">
+                    Sed porttitor placerat rhoncus. In at nunc tellus. Maecenas blandit nunc ligula. Prae-sent elit leo.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="advantages__column second-col">
+              <div class="advantages__column__item">
+                <div class="col-item__icon">
+                  <img src="./assets/images/inovative_ideas_icon.png" alt="123" height="59" width="59">
+                </div>
+                <div class="col-item__body">
+                  <div class="col-item__title">Inovative Ideas</div>
+                  <div class="col-item__description">
+                    Quisque luctus, quam eget molestie com-modo, lacus purus cursus purus, nec ruturm tellus dolor id lorem.
+                  </div>
+                </div>
+              </div>
+              <div class="advantages__column__item">
+                <div class="col-item__icon">
+                  <img src="./assets/images/support_icon.png" alt="123" height="59" width="59">
+                </div>
+                <div class="col-item__body">
+                  <div class="col-item__title">24 / 7 Support</div>
+                  <div class="col-item__description">
+                    Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. Nulla a sem erat. Pellen-tesque egestas venenatis lorem.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="advantages__column third-col">
+              <div class="advantages__column__item">
+                <div class="col-item__icon">
+                  <img src="./assets/images/love_is_the_answer_icon.png" alt="123" height="59" width="59">
+                </div>
+                <div class="col-item__body">
+                  <div class="col-item__title">Love Is The Answer</div>
+                  <div class="col-item__description">
+                    Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequal felis. Quisque condimentum
+                  </div>
+                </div>
+              </div>
+              <div class="advantages__column__item">
+                <div class="col-item__icon">
+                  <img src="./assets/images/feel_like_a_star_icon.png" alt="123" height="59" width="59">
+                </div>
+                <div class="col-item__body">
+                  <div class="col-item__title">Feel Like A Star</div>
+                  <div class="col-item__description">
+                    Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="portfolio-section">
+      <div class="content-wrapper">
+        <div class="portfolio">
+          <div class="portfolio__title"><h2 class="section-title">Portfolio</h2></div>
+          <div class="portfolio__description section-description">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</div>
+          <div class="portfolio__nav">
+            <ul class="portfolio-nav">
+              <li class="portfolio-nav__item">
+                <a class="portfolio-nav__link" href="">All</a>
+              </li>
+              <li class="portfolio-nav__item">
+                <a class="portfolio-nav__link" href="">Web Design</a>
+              </li>
+              <li class="portfolio-nav__item">
+                <a class="portfolio-nav__link" href="">Graphic Design</a>
+              </li>
+              <li class="portfolio-nav__item">
+                <a class="portfolio-nav__link" href="">Artwork</a>
+              </li>
+            </ul>
+          </div>
+          <div class="portfolio__gallery">
+            <div class="gallery__column">
+              <div class="gallery__item"><img src="./assets/images/portfolio_images/portfolio_img_1.png" alt="portfolio image" width="220" height="187"></div>
+              <div class="gallery__item"><img src="./assets/images/portfolio_images/portfolio_img_5.png" alt="portfolio image" width="220" height="187"></div>
+              <div class="gallery__item"><img src="./assets/images/portfolio_images/portfolio_img_9.png" alt="portfolio image" width="220" height="187"></div>
+            </div>
+            <div class="gallery__column">
+              <div class="gallery__item"><img src="./assets/images/portfolio_images/portfolio_img_2.png" alt="portfolio image" width="220" height="187"></div>
+              <div class="gallery__item"><img src="./assets/images/portfolio_images/portfolio_img_6.png" alt="portfolio image" width="220" height="187"></div>
+              <div class="gallery__item"><img src="./assets/images/portfolio_images/portfolio_img_10.png" alt="portfolio image" width="220" height="187"></div>
+            </div>
+            <div class="gallery__column">
+              <div class="gallery__item"><img src="./assets/images/portfolio_images/portfolio_img_3.png" alt="portfolio image" width="220" height="187"></div>
+              <div class="gallery__item"><img src="./assets/images/portfolio_images/portfolio_img_7.png" alt="portfolio image" width="220" height="187"></div>
+              <div class="gallery__item"><img src="./assets/images/portfolio_images/portfolio_img_11.png" alt="portfolio image" width="220" height="187"></div>
+            </div>
+            <div class="gallery__column">
+              <div class="gallery__item"><img src="./assets/images/portfolio_images/portfolio_img_4.png" alt="portfolio image" width="220" height="187"></div>
+              <div class="gallery__item"><img src="./assets/images/portfolio_images/portfolio_img_8.png" alt="portfolio image" width="220" height="187"></div>
+              <div class="gallery__item"><img src="./assets/images/portfolio_images/portfolio_img_12.png" alt="portfolio image" width="220" height="187"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="about-us-section">
+      <div class="content-wrapper">
+        <div class="about-us">
+          <div class="about-us__title section-title">
+            <h2 class="section-title">About Us</h2>
+          </div>
+          <div class="about-us__description section-description">
+          <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor </p>
+          <p>ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+          </div>
+          <div class="about-us__team">
+            <div class="team-member__column">
+              <div class="team-member__photo"><img src="./assets/images/about_us_images/team_member_1.jpg" alt="photo" width="300" height="300"></div>
+              <div class="team-member__name column-title">Adam Jensen</div>
+              <div class="team-member__about column-description">Quisque luctus,quam eget molestie commodo,lacus purus cursus purus, nec rutrum tellus dolor id lorem.</div>
+              <div class="team-member__social-link">
+                <div class="social-link_icon "><img src="./assets/images/about_us_images/social_icon_facebook.png" alt="facebook icon" width="32" height="32"></div>
+                <div class="social-link_icon"><img src="./assets/images/about_us_images/social_icon_google_plus.png" alt="facebook icon" width="32" height="32"></div>
+                <div class="social-link_icon"><img src="./assets/images/about_us_images/social_icon_twitter.png" alt="facebook icon" width="32" height="32"></div>
+                <div class="social-link_icon"><img src="./assets/images/about_us_images/social_icon_linkedin.png" alt="facebook icon" width="32" height="32"></div>
+              </div>
+            </div>
+            <div class="team-member__column">
+              <div class="team-member__photo"><img src="./assets/images/about_us_images/team_member_2.jpg" alt="photo" width="300" height="300"></div>
+              <div class="team-member__name column-title">Desmond Miles</div>
+              <div class="team-member__about column-description">Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</div>
+              <div class="team-member__social-link">
+                <div class="social-link_icon "><img src="./assets/images/about_us_images/social_icon_facebook.png" alt="facebook icon" width="32" height="32"></div>
+                <div class="social-link_icon"><img src="./assets/images/about_us_images/social_icon_google_plus.png" alt="facebook icon" width="32" height="32"></div>
+                <div class="social-link_icon"><img src="./assets/images/about_us_images/social_icon_twitter.png" alt="facebook icon" width="32" height="32"></div>
+                <div class="social-link_icon"><img src="./assets/images/about_us_images/social_icon_linkedin.png" alt="facebook icon" width="32" height="32"></div>
+              </div>
+            </div>
+            <div class="team-member__column">
+              <div class="team-member__photo"><img src="./assets/images/about_us_images/team_member_3.jpg" alt="photo" width="300" height="300"></div>
+              <div class="team-member__name column-title">Scolara Visari</div>
+              <div class="team-member__about column-description">Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.</div>
+              <div class="team-member__social-link">
+                <div class="social-link_icon "><img src="./assets/images/about_us_images/social_icon_facebook.png" alt="facebook icon" width="32" height="32"></div>
+                <div class="social-link_icon"><img src="./assets/images/about_us_images/social_icon_google_plus.png" alt="facebook icon" width="32" height="32"></div>
+                <div class="social-link_icon"><img src="./assets/images/about_us_images/social_icon_twitter.png" alt="facebook icon" width="32" height="32"></div>
+                <div class="social-link_icon"><img src="./assets/images/about_us_images/social_icon_linkedin.png" alt="facebook icon" width="32" height="32"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="quote-section">
+      <div class="content-wrapper">
+        <div class="quote">
+          <div class="quote__title section-title">
+            <h2>Get a Quote</h2>
+          </div>
+          <div class="quote__description section-description">
+            <p>
+              <span>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor</span>
+              <span>ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</span>
+            </p>
+          </div>
+          <div class="quote-form-container">
+            <div class="quote__form">
+              <form action="/action_page.php" method="post">
+                <input type="text" name="userName" value="" placeholder="Name (Required)" pattern="[A-Za-z]{1}[A-Za-z' -\.]{0,30}" required>
+                <input type="email" name="email" value="" placeholder="Email (Required)" required>
+                <input type="text" name="subject" value="" placeholder="Subject" >
+                <textarea name="projectDetail" placeholder="Describe your project in detail..."></textarea>
+                <button class="submit-btn" type="submit">Send</button>
+              </form>
+            </div>
+            <div class="quote__contact-info">
+              <div class="contact-info__title column-title"><h3>Contact Information</h3></div>
+              <div class="contact-info__description column-description">
+                <p>Quisque hendrerit purus dapibus, ornare nibh vitae, viver-ra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero.
+                  Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequal felis.</p>
+              </div>
+              <div class="contact-info__credentials">
+                <div class="contact-info__location">
+                  <div class="contact-info__icon-area">
+                    <img class="contact-info__icon" src="./assets/images/quote/quote_location_icon.png" alt="location icon" width="7" height="11">
+                  </div>
+                  <div class="contact-info__text">Elm St. 14/05 Lost City</div>
+                </div>
+                <div class="contact-info__phone">
+                  <div class="contact-info__icon-area">
+                    <img class="contact-info__icon" src="./assets/images/quote/quote_phone_icon.png" alt="phone icon" width="11" height="11">
+                  </div>
+                  <div class="contact-info__text">
+                    <a href="tel:035283318635">03528 331 86 35</a>
+                  </div>
+                </div>
+                <div class="contact-info__email">
+                  <div class="contact-info__icon-area">
+                  <img class="contact-info__icon" src="./assets/images/quote/quote_email_icon.png" alt="email icon" width="13" height="8">
+                  </div>
+                  <div class="contact-info__text">
+                  <a href="mailto:info@singolo.com">info@singolo.com</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="content-wrapper">
+        <div class="footer">
+          <span>© Copyright 2013</span>
+          <ul class="footer__social-links">
+            <li class="social-link_icon">
+              <img src="./assets/images/about_us_images/social_icon_facebook.png" alt="facebook icon" width="32" height="32">
+            </li>
+            <li class="social-link_icon">
+              <img src="./assets/images/about_us_images/social_icon_google_plus.png" alt="google plus icon" width="32" height="32">
+            </li>
+            <li class="social-link_icon">
+              <img src="./assets/images/about_us_images/social_icon_twitter.png" alt="twitter icon" width="32" height="32">
+            </li>
+            <li class="social-link_icon">
+              <img src="./assets/images/about_us_images/social_icon_linkedin.png" alt="linkedin icon" width="32" height="32">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
