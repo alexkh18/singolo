@@ -80,11 +80,8 @@ header {
   letter-spacing: -0.2px;
 }
 
-.header-nav__item:first-of-type .header-nav__link {
-  color: #f06c64;
-}
-
-.header-nav__link:hover {
+.header-nav__link:hover,
+.header-nav__link.active {
   color: #f06c64;
 }
 
