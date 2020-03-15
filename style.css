@@ -143,84 +143,77 @@ h2 {
 }
 
 .slider {
-  display: flex;
+  position: relative;
   height: 594px;
 }
 
-.slider__left-arrow {
-  flex-basis: 10%;
+.slider__item {
+  display: flex;
+  justify-content: space-around;
+  width: 908px;
+  height: 594px;
 }
 
-.slider__left-img {
-  flex-basis: 22%;
-}
-
-.slider__right-img {
-  flex-basis: 58%;
-}
-
-.slider__right-arrow {
-  flex-basis: 10%;
-}
-
-.slider__left-arrow .arrow-img {
-  margin-top: 281px;
-  margin-left: 8px;
-}
-
-.slider__right-arrow .arrow-img {
-  margin-top: 281px;
-  margin-left: 30px;
-}
-
-.slider__left-img .img-container,
-.slider__right-img .img-container {
+.slider__left-image {
   position: relative;
-
   width: 100%;
   height: 100%;
+  flex-basis: 40%;
 }
 
-.slider__left-img .first-img {
+.slider__right-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex-basis: 60%;
+}
+
+.slider__left-image > img,
+.slider__right-image > img {
   position: absolute;
+}
+
+.phone-vertical {
   top: 53px;
-  left: 10px;
+  left: 112px;
+  z-index: 0;
+}
+
+.phone-vertical-screensaver {
+  top: 118px;
+  left: 126px;
   z-index: 1;
-
-  border-radius: 27px;
 }
 
-.slider__left-img .shadow-img {
-  position: absolute;
-  top: 53px;
-  left: 10px;
-}
-
-.slider__right-img .second-img {
-  position: absolute;
+.phone-horizontal {
   top: 174px;
-  right: 35px;
+  left: 62px;
+  z-index: 0;
+}
+
+.phone-horizontal-screensaver {
+  top: 188px;
+  left: 122px;
   z-index: 1;
-
-  border-radius: 27px;
 }
 
-.slider__right-img .shadow-img {
+.left-arrow {
   position: absolute;
-  top: 53px;
-  right: 130px;
-
-  transform: scale(-1, 1) rotate(90deg);
+  top: 281px;
+  left: 42px;
 }
 
-.slider__left-arrow .color-filtered-arrow:hover {
-  transform: translate(-5px);
-  filter: url(#white-filter);
+.right-arrow {
+  position: absolute;
+  top: 281px;
+  left: 964px;
+  transform: scale(-1, 1);
 }
 
-.slider__right-arrow .color-filtered-arrow:hover {
-  transform: translate(5px);
-  filter: url(#white-filter);
+.left-arrow:hover,
+.right-arrow:hover {
+  cursor: pointer;
+  filter: grayscale(100%) brightness(70%) contrast(5);
 }
 
 /*---------------------------------main__our-services---------------------------------*/
