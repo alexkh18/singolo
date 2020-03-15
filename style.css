@@ -676,3 +676,69 @@ footer {
   cursor: pointer;
   filter: invert(52%) sepia(49%) saturate(575%) hue-rotate(316deg) brightness(94%) contrast(101%);
 }
+
+/*---modal-windows---*/
+#message-block {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+
+}
+
+#message-block.hidden {
+  display: none;
+}
+
+#message-content {
+  position: absolute;
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: space-between;
+  /* height: 30vh;
+  width: 30vw; */
+
+  height: 300px;
+  width: 500px;
+  top: calc(50% - 150px);
+  left: calc(50% - 250px);
+  background-color: #f2f2f2;;
+  border: 2px solid  #000000;
+  border-radius: 5px;
+  font-weight: 900;
+  font-size: 1.5rem;
+  line-height: 1;
+  font-family: "Lato", "Arial Black", sans-serif;
+  color: #2d303a;
+  /* color: #000000; */
+  letter-spacing: -0.15px;
+  overflow: hidden;
+  padding: 0 1%;
+}
+
+#close-btn {
+  width: 40%;
+  margin: 15px auto;
+}
+
+#message-title {
+  margin: 15px auto;
+  font-size: 2rem;
+}
+
+#message-subject {
+  max-height: 3rem;
+  margin-bottom: 10px;
+  overflow: auto;
+}
+
+#message-description {
+  overflow: auto;
+  max-height: 9rem;
+  margin-bottom: 10px;
+}
+

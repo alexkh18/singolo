@@ -19,7 +19,7 @@
         <div class="header__nav">
           <ul class="header-nav" id="header-nav">
             <li class="header-nav__item">
-              <a class="header-nav__link color-red" href="#slider-section">HOME</a>
+              <a class="header-nav__link color-red" href="#">HOME</a>
               <div class="header-nav__decor">.</div>
             </li>
             <li class="header-nav__item">
@@ -272,12 +272,12 @@
           </div>
           <div class="quote-form-container">
             <div class="quote__form">
-              <form action="/action_page.php" method="post">
-                <input type="text" name="userName" value="" placeholder="Name (Required)" pattern="[A-Za-z]{1}[A-Za-z' -\.]{0,30}" required>
-                <input type="email" name="email" value="" placeholder="Email (Required)" required>
-                <input type="text" name="subject" value="" placeholder="Subject" >
-                <textarea name="projectDetail" placeholder="Describe your project in detail..."></textarea>
-                <button class="submit-btn" type="submit">Send</button>
+              <form id="form">
+                <input type="text" id="userName" name="userName" value="" placeholder="Name (Required)" pattern="[A-Za-z]{1}[A-Za-z' -\.]{0,30}" required>
+                <input type="email" id="email" name="email" value="" placeholder="Email (Required)" required>
+                <input type="text" id="subject" name="subject" value="" placeholder="Subject" >
+                <textarea name="projectDetail" id="description" placeholder="Describe your project in detail..."></textarea>
+                <button class="submit-btn" id="send-btn">Send</button>
               </form>
             </div>
             <div class="quote__contact-info">
@@ -338,6 +338,14 @@
       </div>
     </footer>
   </main>
+  <div id="message-block" class="hidden">
+    <div id="message-content">
+      <p id="message-title" class="">Message send</p>
+      <p id="message-subject">Without Subject</p>
+      <p id="message-description">Without Description</p>
+      <button id="close-btn">OK</button>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
