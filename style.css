@@ -147,11 +147,28 @@ h2 {
   height: 594px;
 }
 
+.slider-container {
+  display: flex;
+  overflow: hidden;
+  /* width: 100%; */
+
+  /* width: ; */
+
+}
+
 .slider__item {
+  position: relative;
   display: flex;
   justify-content: space-around;
-  width: 908px;
   height: 594px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+
+.second-slider {
+  justify-content: center;
+  align-items: center;
 }
 
 .slider__left-image {
@@ -185,15 +202,27 @@ h2 {
   z-index: 1;
 }
 
+.phone-vertical-btn {
+  top: 460px;
+  left: 197px;
+  z-index: 1;
+}
+
 .phone-horizontal {
   top: 174px;
-  left: 62px;
+  left: 17px;
   z-index: 0;
 }
 
 .phone-horizontal-screensaver {
   top: 188px;
-  left: 122px;
+  left: 77px;
+  z-index: 1;
+}
+
+.phone-horizontal-btn {
+  top: 259px;
+  left: 25px;
   z-index: 1;
 }
 
@@ -201,6 +230,7 @@ h2 {
   position: absolute;
   top: 281px;
   left: 42px;
+  color: blue;
 }
 
 .right-arrow {
