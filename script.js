@@ -1,57 +1,67 @@
 const HEADER_NAV_MENU = document.getElementById('header-nav');
 
-
-let resetForm = (formId) => document.getElementById(formId).reset();
-let validateInputFiled = function (inputId, validationRegex) {
-  const isFocus = 0;
-  const isError = 0;
-  const inputValue = document.getElementById(inputId).value.toString().trim()
-
-  // if(!inputValue.checkValidity()){
-  //   document.getElementById(inputId).focus();
-  //   document.getElementById(inputId).innerHTML = "WRONG!";
-  // }
-
-  if(inputValue === '') {
-    // document.getElementById(inputId).html('This is a required field.');
-    document.getElementById(inputId).focus();
-  } else if(!validationRegex.test(email)) {
-    // document.getElementById(inputId).html('Invalid email address.');
-    document.getElementById(inputId).focus();
-  }
-}
-
 HEADER_NAV_MENU.addEventListener('click', (event) => {
   HEADER_NAV_MENU.querySelectorAll('.header-nav__link').forEach(elem => elem.classList.remove('active'));
   event.target.classList.add('active');
-})
+});
 
 const SEND_BTN = document.getElementById('send-btn');
 const CLOSE_MSG_BLOCK_BTN = document.getElementById('close-btn');
+const NAME_INPUT_FIELD = document.getElementById('userName');
+const EMAIL_INPUT_FIELD = document.getElementById('email');
 
-function openPopUpMessageForSendBtn() {
+const getFieldValue = (elemId) => document.getElementById(elemId).value;
+const setTextValue = (elemId, text) => document.getElementById(elemId).innerText = text;
+const resetForm = (formId) => document.getElementById(formId).reset();
+const namePattern = /^[a-zA-Z]{2,}[A-Za-z' -\.]{0,30}$/;
+const emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+const nameInputErrMsg = 'Invalid name: The field should contain minimum two letters';
+const emailInputErrMsg = 'Invalid email address: Enter an email address in the correct format, like name@example.com';
+
+function validateField(field, pattern, errorMsg) {
+  const fieldValue = field.value;
+
+  if (pattern.test(fieldValue) === false) {
+    field.setCustomValidity(errorMsg);
+    return false;
+  }
+  field.setCustomValidity('');
+  return true;
+}
+
+function validateFieldAfterChanging(field, pattern, errorMsg) {
+  field.addEventListener('input', () => validateField(field, pattern, errorMsg));
+}
+
+function openTheLetterWasSentPopUp() {
   SEND_BTN.addEventListener('click', (event) => {
-    const subjectTxt = document.getElementById('subject').value.toString();
-    const descriptionTxt = document.getElementById('description').value.toString();
-
-    let setMsgText = (elemId, text) => document.getElementById(elemId).innerText = text;
-
-
-    // validateInputFiled('userName', `[A-Za-z]{1}[A-Za-z' -\.]{0,30}`);
-    if(subjectTxt) {
-      setMsgText('message-subject', `Subject: ${subjectTxt}`);
+    if (validateField(NAME_INPUT_FIELD, namePattern, nameInputErrMsg) === false) {
+      return;
     }
-    if(descriptionTxt) {
-      setMsgText('message-description', `Description: ${descriptionTxt}`);
+    if (validateField(EMAIL_INPUT_FIELD, emailPattern, emailInputErrMsg) === false) {
+      return;
     }
-    document.getElementById('message-block').classList.remove('hidden');
+    if (getFieldValue('subject')) {
+      setTextValue('message-subject', `Subject: ${getFieldValue('subject')}`);
+    } else {
+      setTextValue('message-subject', 'Without Subject');
+    }
+    if (getFieldValue('description')) {
+      setTextValue('message-description', `Description: ${getFieldValue('description')}`);
+    } else {
+      setTextValue('message-subject', 'Without Description');
+    }
+
     event.preventDefault();
-  })
+    document.getElementById('message-block').classList.remove('hidden');
+  });
+}
 
+function closeTheLetterWasSentPopUp() {
   CLOSE_MSG_BLOCK_BTN.addEventListener('click', () => {
     document.getElementById('message-block').classList.add('hidden');
-    resetForm('form')
-  })
+    resetForm('form');
+  });
 }
 
 const SLIDER_CONTROL_PREV = document.querySelector('.left-arrow');
@@ -61,7 +71,7 @@ function slideSliderSectionContent(sliderControl) {
   sliderControl.addEventListener('click', () => {
     let sliderCounter = 0;
     const currLeftValue = document.querySelectorAll('.slider__item')[0].style.left.replace(/[^\d-]/g, '');
-    const setSlideBackground = (backgroundColorStyle, borderBottomStyle) => {
+    const setSliderSectionBackground = (backgroundColorStyle, borderBottomStyle) => {
       document.querySelector('.slider-section').style.backgroundColor = backgroundColorStyle;
       document.querySelector('.slider-section').style.borderBottom = borderBottomStyle;
     };
@@ -123,3 +133,7 @@ slideSliderSectionContent(SLIDER_CONTROL_PREV);
 slideSliderSectionContent(SLIDER_CONTROL_NEXT);
 switchPhoneScreenState(VERTICAL_PHONE_BTN);
 switchPhoneScreenState(HORIZONTAL_PHONE_BTN);
+openTheLetterWasSentPopUp();
+closeTheLetterWasSentPopUp();
+validateFieldAfterChanging(EMAIL_INPUT_FIELD, emailPattern, emailInputErrMsg);
+validateFieldAfterChanging(NAME_INPUT_FIELD, namePattern, nameInputErrMsg);
