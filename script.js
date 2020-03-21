@@ -129,6 +129,52 @@ function switchPhoneScreenState(slidePhoneImg) {
   });
 }
 
+const PORTFOLIO_TABS_MENU = document.querySelector('.portfolio-nav');
+const PORTFOLIO_MENU_ALL_TAB_LINK = document.querySelector('.portfolio-nav :nth-child(1) > a');
+const PORTFOLIO_MENU_WEB_DESIGN_TAB_LINK = document.querySelector('.portfolio-nav :nth-child(2) > a');
+const PORTFOLIO_MENU_GRAPHIC_DESIGN_TAB_LINK = document.querySelector('.portfolio-nav :nth-child(3) > a');
+const PORTFOLIO_MENU_WEB_ARTWORK_TAB_LINK = document.querySelector('.portfolio-nav :nth-child(4) > a');
+const PORTFOLIO_GALLERY_ITEMS = document.querySelectorAll('.gallery__item > img');
+const PORTFOLIO_GALLERY = document.querySelector('.portfolio__gallery');
+
+function switchPortfolioTabs() {
+  PORTFOLIO_TABS_MENU.addEventListener('click', (event) => {
+    PORTFOLIO_TABS_MENU.querySelectorAll('.portfolio-nav__link').forEach(elem => elem.classList.remove('active'));
+    event.target.classList.add('active');
+  });
+}
+
+function switchPortfolioTabContent(portfolioMenuTabLink) {
+  portfolioMenuTabLink.addEventListener('click', () => {
+    // if tab already active, there is not get any change for tab content
+    if (portfolioMenuTabLink.classList.contains('active')) {
+      return;
+    }
+    // remove border from gallery item when changing tab
+    PORTFOLIO_GALLERY_ITEMS.forEach(elem => {
+      if (elem.classList.contains('active')) {
+        elem.classList.remove('active');
+      }
+    });
+    document.querySelectorAll('.gallery__item').forEach((el, i, arrOfItems) => {
+      if (arrOfItems[0].style.order === '1') {
+        el.style.order = 12 - i;
+      } else {
+        el.style.order = i + 1;
+      }
+    });
+  });
+}
+
+function addBorderForPortfolioImg() {
+  PORTFOLIO_GALLERY.addEventListener('click', (event) => {
+    PORTFOLIO_GALLERY_ITEMS.forEach(elem => {
+      elem.classList.remove('active');
+      event.target.classList.add('active');
+    });
+  });
+}
+
 slideSliderSectionContent(SLIDER_CONTROL_PREV);
 slideSliderSectionContent(SLIDER_CONTROL_NEXT);
 switchPhoneScreenState(VERTICAL_PHONE_BTN);
@@ -137,3 +183,9 @@ openTheLetterWasSentPopUp();
 closeTheLetterWasSentPopUp();
 validateFieldAfterChanging(EMAIL_INPUT_FIELD, emailPattern, emailInputErrMsg);
 validateFieldAfterChanging(NAME_INPUT_FIELD, namePattern, nameInputErrMsg);
+switchPortfolioTabs();
+switchPortfolioTabContent(PORTFOLIO_MENU_ALL_TAB_LINK);
+switchPortfolioTabContent(PORTFOLIO_MENU_WEB_DESIGN_TAB_LINK);
+switchPortfolioTabContent(PORTFOLIO_MENU_GRAPHIC_DESIGN_TAB_LINK);
+switchPortfolioTabContent(PORTFOLIO_MENU_WEB_ARTWORK_TAB_LINK);
+addBorderForPortfolioImg();

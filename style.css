@@ -388,13 +388,8 @@ h2 {
   border-radius: 5px;
 }
 
-.portfolio-nav__item:first-of-type .portfolio-nav__link {
-  color: #ffffff;
-
-  border: 1px solid #ffffff;
-}
-
-.portfolio-nav__link:hover {
+.portfolio-nav__link:hover,
+.portfolio-nav__link.active {
   color: #ffffff;
 
   border: 1px solid #ffffff;
@@ -411,7 +406,61 @@ h2 {
 }
 
 .gallery__item {
+  height: 187px;
   margin-bottom: 17px;
+}
+
+.gallery__item > img.active {
+  outline: 5px solid #f06c64;
+  outline-offset: -5px;
+}
+
+.gallery__item.item1 {
+  order: 1;
+}
+
+.gallery__item.item2 {
+  order: 2;
+}
+
+.gallery__item.item3 {
+  order: 3;
+}
+
+.gallery__item.item4 {
+  order: 4;
+}
+
+.gallery__item.item5 {
+  order: 5;
+}
+
+.gallery__item.item6 {
+  order: 6;
+}
+
+.gallery__item.item7 {
+  order: 7;
+}
+
+.gallery__item.item8 {
+  order: 8;
+}
+
+.gallery__item.item9 {
+  order: 9;
+}
+
+.gallery__item.item10 {
+  order: 10;
+}
+
+.gallery__item.item11 {
+  order: 11;
+}
+
+.gallery__item.item12 {
+  order: 12;
 }
 
 /*---------------------------------main__about-us---------------------------------*/
