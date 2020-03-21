@@ -98,7 +98,7 @@ function openTheLetterWasSentPopUp() {
     if (getFieldValue('description')) {
       setTextValue('message-description', `Description: ${getFieldValue('description')}`);
     } else {
-      setTextValue('message-subject', 'Without Description');
+      setTextValue('message-description', 'Without Description');
     }
 
     event.preventDefault();
