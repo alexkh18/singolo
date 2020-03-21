@@ -1,9 +1,58 @@
 const HEADER_NAV_MENU = document.getElementById('header-nav');
+const HEADER_NAV_MENU_ANCHORS = document.querySelectorAll('.header-nav a[href*="#"]');
 
-HEADER_NAV_MENU.addEventListener('click', (event) => {
+function removeActiveClassFromAllHeaderNavLinks() {
   HEADER_NAV_MENU.querySelectorAll('.header-nav__link').forEach(elem => elem.classList.remove('active'));
-  event.target.classList.add('active');
-});
+}
+
+function activateHeaderNavLinkOnClick() {
+  HEADER_NAV_MENU.addEventListener('click', (event) => {
+    removeActiveClassFromAllHeaderNavLinks();
+    event.target.classList.add('active');
+  });
+}
+
+function activateCurrHeaderNavLinkOnScroll() {
+  const sectionOffsetYPosition = new Map();
+  document.querySelectorAll('main > section').forEach( elem => {
+    sectionOffsetYPosition.set(elem.id, elem.offsetTop);
+  });
+
+  document.querySelector('a[href="#home"]').classList.add('active');
+  window.addEventListener('scroll', () => {
+    removeActiveClassFromAllHeaderNavLinks();
+    document.querySelector('a[href="#home"]').classList.add('active');
+    if (window.pageYOffset >= sectionOffsetYPosition.get('our-services-section')) {
+      removeActiveClassFromAllHeaderNavLinks();
+      document.querySelector('a[href="#our-services-section"]').classList.add('active');
+    }
+    if (window.pageYOffset >= sectionOffsetYPosition.get('portfolio-section')) {
+      removeActiveClassFromAllHeaderNavLinks();
+      document.querySelector('a[href="#portfolio-section"]').classList.add('active');
+    }
+    if (window.pageYOffset >= sectionOffsetYPosition.get('about-us-section')) {
+      removeActiveClassFromAllHeaderNavLinks();
+      document.querySelector('a[href="#about-us-section"]').classList.add('active');
+    }
+    if (window.pageYOffset === document.body.offsetHeight - window.innerHeight) {
+      removeActiveClassFromAllHeaderNavLinks();
+      document.querySelector('a[href="#quote-section"]').classList.add('active');
+    }
+  });
+}
+
+function animatedScrollingForAnchorsNavigation() {
+  HEADER_NAV_MENU_ANCHORS.forEach(el => {
+    el.addEventListener('click', (event) => {
+      event.preventDefault();
+      const sectionId = el.getAttribute('href').substr(1);
+      document.getElementById(sectionId).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  });
+}
 
 const SEND_BTN = document.getElementById('send-btn');
 const CLOSE_MSG_BLOCK_BTN = document.getElementById('close-btn');
@@ -175,6 +224,9 @@ function addBorderForPortfolioImg() {
   });
 }
 
+activateHeaderNavLinkOnClick();
+activateCurrHeaderNavLinkOnScroll();
+animatedScrollingForAnchorsNavigation();
 slideSliderSectionContent(SLIDER_CONTROL_PREV);
 slideSliderSectionContent(SLIDER_CONTROL_NEXT);
 switchPhoneScreenState(VERTICAL_PHONE_BTN);
