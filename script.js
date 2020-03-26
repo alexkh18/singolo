@@ -119,7 +119,7 @@ const SLIDER_CONTROL_NEXT = document.querySelector('.right-arrow');
 function slideSliderSectionContent(sliderControl) {
   sliderControl.addEventListener('click', () => {
     let sliderCounter = 0;
-    const currLeftValue = document.querySelectorAll('.slider__item')[0].style.left.replace(/[^\d-]/g, '');
+    const currLeftValue = document.querySelectorAll('.slider-list__item')[0].style.left.replace(/[^\d-]/g, '');
     const setSliderSectionBackground = (backgroundColorStyle, borderBottomStyle) => {
       document.querySelector('.slider-section').style.backgroundColor = backgroundColorStyle;
       document.querySelector('.slider-section').style.borderBottom = borderBottomStyle;
@@ -127,7 +127,7 @@ function slideSliderSectionContent(sliderControl) {
 
     if (currLeftValue === '' || currLeftValue === '0') {
       const slide = setInterval(() => {
-        document.querySelectorAll('.slider__item').forEach(sliderItem => {
+        document.querySelectorAll('.slider-list__item').forEach(sliderItem => {
           sliderCounter -= 1;
           sliderItem.style.left = `${sliderCounter}%`;
           if (sliderItem.style.left === '-100%') {
@@ -136,7 +136,7 @@ function slideSliderSectionContent(sliderControl) {
             other sliderItem will not have requiring value, so forEach() below this comment
             resolve this problem and set requiring value for all sliderItem
             */
-            document.querySelectorAll('.slider__item').forEach(sliderItem => {
+            document.querySelectorAll('.slider-list__item').forEach(sliderItem => {
               sliderItem.style.left = `${sliderCounter}%`;
             });
             clearInterval(slide);
@@ -149,11 +149,11 @@ function slideSliderSectionContent(sliderControl) {
       sliderCounter = +currLeftValue;
 
       const slide = setInterval(() => {
-        document.querySelectorAll('.slider__item').forEach(sliderItem => {
+        document.querySelectorAll('.slider-list__item').forEach(sliderItem => {
           sliderCounter += 1;
           sliderItem.style.left = `${sliderCounter}%`;
           if (sliderItem.style.left === '0%') {
-            document.querySelectorAll('.slider__item').forEach(sliderItem => {
+            document.querySelectorAll('.slider-list__item').forEach(sliderItem => {
               sliderItem.style.left = `${sliderCounter}%`;
             });
             clearInterval(slide);
