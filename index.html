@@ -12,30 +12,57 @@
   <header id="home">
     <div class="content-wrapper">
       <div class="header">
-        <div class="header__logo">
+        <input id="header__hamburger-toggle" type="checkbox">
+        <label class="header__hamburger-btn" for="header__hamburger-toggle">
+          <img src="./assets/images/nav_menu_burger_icon.png" alt="hamburger btn icon">
+        </label>
+        <div class="hamburger-menu">
+          <div class="hamburger-menu__content">
+            <div class="hamburger-menu__logo logo">
+              <h1>singolo</h1>
+              <span>*</span>
+            </div>
+            <nav class="hamburger-menu__nav">
+              <ul class="hamburger-nav" id="header-nav">
+                <li class="hamburger-nav__item">
+                  <a class="nav-link" href="#home">HOME</a>
+                </li>
+                <li class="hamburger-nav__item">
+                  <a class="nav-link" href="#our-services-section">SERVICES</a>
+                </li>
+                <li class="hamburger-nav__item">
+                  <a class="nav-link" href="#portfolio-section">PORTFOLIO</a>
+                </li>
+                <li class="hamburger-nav__item">
+                  <a class="nav-link" href="#about-us-section">ABOUT</a>
+                </li>
+                <li class="hamburger-nav__item">
+                  <a class="nav-link" href="#quote-section">CONTACT</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="header__logo logo">
           <h1>singolo</h1>
           <span>*</span>
         </div>
         <div class="header__nav">
           <ul class="header-nav" id="header-nav">
             <li class="header-nav__item">
-              <a class="header-nav__link" href="#home">HOME</a>
-              <div class="header-nav__decor">.</div>
+              <a class="nav-link" href="#home">HOME</a>
             </li>
             <li class="header-nav__item">
-              <a class="header-nav__link" href="#our-services-section">SERVICES</a>
-              <div class="header-nav__decor">.</div>
+              <a class="nav-link" href="#our-services-section">SERVICES</a>
             </li>
             <li class="header-nav__item">
-              <a class="header-nav__link" href="#portfolio-section">PORTFOLIO</a>
-              <div class="header-nav__decor">.</div>
+              <a class="nav-link" href="#portfolio-section">PORTFOLIO</a>
             </li>
             <li class="header-nav__item">
-              <a class="header-nav__link" href="#about-us-section">ABOUT</a>
-              <div class="header-nav__decor">.</div>
+              <a class="nav-link" href="#about-us-section">ABOUT</a>
             </li>
             <li class="header-nav__item">
-              <a class="header-nav__link" href="#quote-section">CONTACT</a>
+              <a class="nav-link" href="#quote-section">CONTACT</a>
             </li>
           </ul>
         </div>

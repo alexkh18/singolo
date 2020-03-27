@@ -2,7 +2,7 @@ const HEADER_NAV_MENU = document.getElementById('header-nav');
 const HEADER_NAV_MENU_ANCHORS = document.querySelectorAll('.header-nav a[href*="#"]');
 
 function removeActiveClassFromAllHeaderNavLinks() {
-  HEADER_NAV_MENU.querySelectorAll('.header-nav__link').forEach(elem => elem.classList.remove('active'));
+  HEADER_NAV_MENU.querySelectorAll('.nav-link').forEach(elem => elem.classList.remove('active'));
 }
 
 function activateHeaderNavLinkOnClick() {
