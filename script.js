@@ -1,48 +1,54 @@
 const HEADER_NAV_MENU = document.getElementById('header-nav');
+const HAMBURGER_NAV_MENU = document.getElementById('hamburger-nav');
 const HEADER_NAV_MENU_ANCHORS = document.querySelectorAll('.header-nav a[href*="#"]');
+const HAMBURGER_NAV_MENU_ANCHORS = document.querySelectorAll('.hamburger-nav a[href*="#"]');
 
-function removeActiveClassFromAllHeaderNavLinks() {
-  HEADER_NAV_MENU.querySelectorAll('.header-nav__link').forEach(elem => elem.classList.remove('active'));
+function removeActiveClassFromAllNavLinks(navMenuElem) {
+  navMenuElem.querySelectorAll('.nav-link').forEach(elem => elem.classList.remove('active'));
 }
 
-function activateHeaderNavLinkOnClick() {
-  HEADER_NAV_MENU.addEventListener('click', (event) => {
-    removeActiveClassFromAllHeaderNavLinks();
+function activateHeaderNavLinkOnClick(navMenuElem) {
+  navMenuElem.addEventListener('click', (event) => {
+    removeActiveClassFromAllNavLinks(navMenuElem);
     event.target.classList.add('active');
   });
 }
 
-function activateCurrHeaderNavLinkOnScroll() {
-  const sectionOffsetYPosition = new Map();
-  document.querySelectorAll('main > section').forEach( elem => {
-    sectionOffsetYPosition.set(elem.id, elem.offsetTop);
-  });
+function activateCurrHeaderNavLinkOnScroll(navMenuId, navMenuElem) {
+  document.querySelector('#header-nav > li > a[href="#slider-section"]').classList.add('active');
+  document.querySelector('#hamburger-nav > li > a[href="#slider-section"]').classList.add('active');
 
-  document.querySelector('a[href="#home"]').classList.add('active');
   window.addEventListener('scroll', () => {
-    removeActiveClassFromAllHeaderNavLinks();
-    document.querySelector('a[href="#home"]').classList.add('active');
-    if (window.pageYOffset >= sectionOffsetYPosition.get('our-services-section')) {
-      removeActiveClassFromAllHeaderNavLinks();
-      document.querySelector('a[href="#our-services-section"]').classList.add('active');
+    const sectionOffsetYPosition = new Map();
+    document.querySelectorAll('main > section').forEach( elem => {
+      sectionOffsetYPosition.set(elem.id, elem.offsetTop);
+    });
+
+    if (window.pageYOffset <= 95) {
+      removeActiveClassFromAllNavLinks(navMenuElem);
+      document.querySelector(`#${navMenuId} > li > a[href="#slider-section"]`).classList.add('active');
     }
-    if (window.pageYOffset >= sectionOffsetYPosition.get('portfolio-section')) {
-      removeActiveClassFromAllHeaderNavLinks();
-      document.querySelector('a[href="#portfolio-section"]').classList.add('active');
+    if (window.pageYOffset >= sectionOffsetYPosition.get('our-services-section') - 95) {
+      removeActiveClassFromAllNavLinks(navMenuElem);
+      document.querySelector(`#${navMenuId} > li > a[href="#our-services-section"]`).classList.add('active');
     }
-    if (window.pageYOffset >= sectionOffsetYPosition.get('about-us-section')) {
-      removeActiveClassFromAllHeaderNavLinks();
-      document.querySelector('a[href="#about-us-section"]').classList.add('active');
+    if (window.pageYOffset >= sectionOffsetYPosition.get('portfolio-section') - 95) {
+      removeActiveClassFromAllNavLinks(navMenuElem);
+      document.querySelector(`#${navMenuId} > li > a[href="#portfolio-section"]`).classList.add('active');
     }
-    if (window.pageYOffset === document.body.offsetHeight - window.innerHeight) {
-      removeActiveClassFromAllHeaderNavLinks();
-      document.querySelector('a[href="#quote-section"]').classList.add('active');
+    if (window.pageYOffset >= sectionOffsetYPosition.get('about-us-section') - 95) {
+      removeActiveClassFromAllNavLinks(navMenuElem);
+      document.querySelector(`#${navMenuId} > li > a[href="#about-us-section"]`).classList.add('active');
+    }
+    if (window.pageYOffset === document.body.offsetHeight - window.innerHeight - 95) {
+      removeActiveClassFromAllNavLinks(navMenuElem);
+      document.querySelector(`#${navMenuId} > li > a[href="#quote-section"]`).classList.add('active');
     }
   });
 }
 
-function animatedScrollingForAnchorsNavigation() {
-  HEADER_NAV_MENU_ANCHORS.forEach(el => {
+function animatedScrollingForAnchorsNavigation(navMenuElem) {
+  navMenuElem.forEach(el => {
     el.addEventListener('click', (event) => {
       event.preventDefault();
       const sectionId = el.getAttribute('href').substr(1);
@@ -119,7 +125,7 @@ const SLIDER_CONTROL_NEXT = document.querySelector('.right-arrow');
 function slideSliderSectionContent(sliderControl) {
   sliderControl.addEventListener('click', () => {
     let sliderCounter = 0;
-    const currLeftValue = document.querySelectorAll('.slider__item')[0].style.left.replace(/[^\d-]/g, '');
+    const currLeftValue = document.querySelectorAll('.slider-list__item')[0].style.left.replace(/[^\d-]/g, '');
     const setSliderSectionBackground = (backgroundColorStyle, borderBottomStyle) => {
       document.querySelector('.slider-section').style.backgroundColor = backgroundColorStyle;
       document.querySelector('.slider-section').style.borderBottom = borderBottomStyle;
@@ -127,7 +133,7 @@ function slideSliderSectionContent(sliderControl) {
 
     if (currLeftValue === '' || currLeftValue === '0') {
       const slide = setInterval(() => {
-        document.querySelectorAll('.slider__item').forEach(sliderItem => {
+        document.querySelectorAll('.slider-list__item').forEach(sliderItem => {
           sliderCounter -= 1;
           sliderItem.style.left = `${sliderCounter}%`;
           if (sliderItem.style.left === '-100%') {
@@ -136,7 +142,7 @@ function slideSliderSectionContent(sliderControl) {
             other sliderItem will not have requiring value, so forEach() below this comment
             resolve this problem and set requiring value for all sliderItem
             */
-            document.querySelectorAll('.slider__item').forEach(sliderItem => {
+            document.querySelectorAll('.slider-list__item').forEach(sliderItem => {
               sliderItem.style.left = `${sliderCounter}%`;
             });
             clearInterval(slide);
@@ -149,11 +155,11 @@ function slideSliderSectionContent(sliderControl) {
       sliderCounter = +currLeftValue;
 
       const slide = setInterval(() => {
-        document.querySelectorAll('.slider__item').forEach(sliderItem => {
+        document.querySelectorAll('.slider-list__item').forEach(sliderItem => {
           sliderCounter += 1;
           sliderItem.style.left = `${sliderCounter}%`;
           if (sliderItem.style.left === '0%') {
-            document.querySelectorAll('.slider__item').forEach(sliderItem => {
+            document.querySelectorAll('.slider-list__item').forEach(sliderItem => {
               sliderItem.style.left = `${sliderCounter}%`;
             });
             clearInterval(slide);
@@ -224,9 +230,12 @@ function addBorderForPortfolioImg() {
   });
 }
 
-activateHeaderNavLinkOnClick();
-activateCurrHeaderNavLinkOnScroll();
-animatedScrollingForAnchorsNavigation();
+activateHeaderNavLinkOnClick(HEADER_NAV_MENU);
+activateHeaderNavLinkOnClick(HAMBURGER_NAV_MENU);
+animatedScrollingForAnchorsNavigation(HEADER_NAV_MENU_ANCHORS);
+animatedScrollingForAnchorsNavigation(HAMBURGER_NAV_MENU_ANCHORS);
+activateCurrHeaderNavLinkOnScroll('header-nav', HEADER_NAV_MENU);
+activateCurrHeaderNavLinkOnScroll('hamburger-nav', HAMBURGER_NAV_MENU);
 slideSliderSectionContent(SLIDER_CONTROL_PREV);
 slideSliderSectionContent(SLIDER_CONTROL_NEXT);
 switchPhoneScreenState(VERTICAL_PHONE_BTN);

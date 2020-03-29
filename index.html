@@ -12,30 +12,57 @@
   <header id="home">
     <div class="content-wrapper">
       <div class="header">
-        <div class="header__logo">
+        <input id="header__hamburger-toggle" type="checkbox">
+        <label class="header__hamburger-btn" for="header__hamburger-toggle">
+          <img src="./assets/images/nav_menu_burger_icon.png" alt="hamburger btn icon">
+        </label>
+        <div class="hamburger-menu">
+          <div class="hamburger-menu__content">
+            <div class="hamburger-menu__logo logo">
+              <h1>singolo</h1>
+              <span>*</span>
+            </div>
+            <nav class="hamburger-menu__nav">
+              <ul class="hamburger-nav" id="hamburger-nav">
+                <li class="hamburger-nav__item">
+                  <a class="nav-link" href="#slider-section">HOME</a>
+                </li>
+                <li class="hamburger-nav__item">
+                  <a class="nav-link" href="#our-services-section">SERVICES</a>
+                </li>
+                <li class="hamburger-nav__item">
+                  <a class="nav-link" href="#portfolio-section">PORTFOLIO</a>
+                </li>
+                <li class="hamburger-nav__item">
+                  <a class="nav-link" href="#about-us-section">ABOUT</a>
+                </li>
+                <li class="hamburger-nav__item">
+                  <a class="nav-link" href="#quote-section">CONTACT</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="header__logo logo">
           <h1>singolo</h1>
           <span>*</span>
         </div>
         <div class="header__nav">
           <ul class="header-nav" id="header-nav">
             <li class="header-nav__item">
-              <a class="header-nav__link" href="#home">HOME</a>
-              <div class="header-nav__decor">.</div>
+              <a class="nav-link" href="#slider-section">HOME</a>
             </li>
             <li class="header-nav__item">
-              <a class="header-nav__link" href="#our-services-section">SERVICES</a>
-              <div class="header-nav__decor">.</div>
+              <a class="nav-link" href="#our-services-section">SERVICES</a>
             </li>
             <li class="header-nav__item">
-              <a class="header-nav__link" href="#portfolio-section">PORTFOLIO</a>
-              <div class="header-nav__decor">.</div>
+              <a class="nav-link" href="#portfolio-section">PORTFOLIO</a>
             </li>
             <li class="header-nav__item">
-              <a class="header-nav__link" href="#about-us-section">ABOUT</a>
-              <div class="header-nav__decor">.</div>
+              <a class="nav-link" href="#about-us-section">ABOUT</a>
             </li>
             <li class="header-nav__item">
-              <a class="header-nav__link" href="#quote-section">CONTACT</a>
+              <a class="nav-link" href="#quote-section">CONTACT</a>
             </li>
           </ul>
         </div>
@@ -45,29 +72,29 @@
   <main>
     <section class="slider-section" id="slider-section">
       <div class="content-wrapper">
-        <div class="slider">
-          <div class="slider-container">
-            <div class="slider__item first-slider">
+        <div class="slider-container">
+          <div class="slider-list">
+            <div class="slider-list__item first-slider">
               <div class="slider__left-image">
-                  <img class="phone-vertical" src="./assets/images/slider/phone-vertical.png" alt="vertical phone" width="240" height="483">
-                  <img class="phone-vertical-screensaver" src="./assets/images/slider/vertical-screensaver.png" alt="vertical phone screensaver">
-                  <img class="phone-vertical-btn" src="./assets/images/slider/button-home.png" alt="horizontal phone button" width="42" height="43">
+                <img class="phone-vertical" src="./assets/images/slider/phone-vertical.png" alt="vertical phone">
+                <img class="phone-vertical-screensaver" src="./assets/images/slider/vertical-screensaver.png" alt="vertical phone screensaver">
+                <img class="phone-vertical-btn" src="./assets/images/slider/button-home.png" alt="horizontal phone button">
               </div>
               <div class="slider__right-image">
-                  <img class="phone-horizontal" src="./assets/images/slider/phone-horizontal.png" alt="horizontal phone" width="483" height="240">
-                  <img class="phone-horizontal-screensaver" src="./assets/images/slider/horizontal-screensaver.png" alt="horizontal phone screensaver">
-                  <img class="phone-horizontal-btn" src="./assets/images/slider/button-home.png" alt="horizontal phone button" width="42" height="43">
+                <img class="phone-horizontal" src="./assets/images/slider/phone-horizontal.png" alt="horizontal phone">
+                <img class="phone-horizontal-screensaver" src="./assets/images/slider/horizontal-screensaver.png" alt="horizontal phone screensaver">
+                <img class="phone-horizontal-btn" src="./assets/images/slider/button-home.png" alt="horizontal phone button">
               </div>
             </div>
-            <div class="slider__item second-slider">
-              <img class="phone-horizontal" src="./assets/images/slider/slider2-img.png" alt="horizontal phone" width="517" height="513">
+            <div class="slider-list__item second-slider">
+              <img src="./assets/images/slider/slider2-img.png" alt="horizontal phone">
             </div>
           </div>
           <div class="slider__left-arrow">
-            <img class="left-arrow" src="./assets/images/slider/arrow.png" alt="slider arrow" width="16" height="27">
+            <img class="left-arrow" src="./assets/images/slider/arrow.png" alt="slider arrow" width="16" height="28">
           </div>
           <div class="slider__right-arrow">
-            <img class="right-arrow" src="./assets/images/slider/arrow.png" alt="slider arrow" width="16" height="27">
+            <img class="right-arrow" src="./assets/images/slider/arrow.png" alt="slider arrow" width="16" height="28">
           </div>
         </div>
       </div>
@@ -84,75 +111,69 @@
             </p>
           </div>
           <div class="our-services__advantages">
-            <div class="advantages__column first-col">
-              <div class="advantages__column__item">
-                <div class="col-item__icon">
-                  <img src="./assets/images/custom_design_icon.png" alt="123" height="59" width="59">
-                </div>
-                <div class="col-item__body">
-                  <div class="col-item__title">Custom Design</div>
-                  <div class="col-item__description">
-                    Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.
-                  </div>
-                </div>
+            <div class="advantages__column__item">
+              <div class="col-item__icon">
+                <img src="./assets/images/custom_design_icon.png" alt="123" height="59" width="59">
               </div>
-              <div class="advantages__column__item">
-                <div class="col-item__icon">
-                  <img src="./assets/images/responsive_layout_icon.png" alt="123" height="59" width="59">
-                </div>
-                <div class="col-item__body">
-                  <div class="col-item__title">Responsive Layout</div>
-                  <div class="col-item__description">
-                    Sed porttitor placerat rhoncus. In at nunc tellus. Maecenas blandit nunc ligula. Prae-sent elit leo.
-                  </div>
+              <div class="col-item__body">
+                <div class="col-item__title">Custom Design</div>
+                <div class="col-item__description">
+                  Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.
                 </div>
               </div>
             </div>
-            <div class="advantages__column second-col">
-              <div class="advantages__column__item">
-                <div class="col-item__icon">
-                  <img src="./assets/images/inovative_ideas_icon.png" alt="123" height="59" width="59">
-                </div>
-                <div class="col-item__body">
-                  <div class="col-item__title">Inovative Ideas</div>
-                  <div class="col-item__description">
-                    Quisque luctus, quam eget molestie com-modo, lacus purus cursus purus, nec ruturm tellus dolor id lorem.
-                  </div>
-                </div>
+            <div class="advantages__column__item">
+              <div class="col-item__icon">
+                <img src="./assets/images/inovative_ideas_icon.png" alt="123" height="59" width="59">
               </div>
-              <div class="advantages__column__item">
-                <div class="col-item__icon">
-                  <img src="./assets/images/support_icon.png" alt="123" height="59" width="59">
-                </div>
-                <div class="col-item__body">
-                  <div class="col-item__title">24 / 7 Support</div>
-                  <div class="col-item__description">
-                    Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. Nulla a sem erat. Pellen-tesque egestas venenatis lorem.
-                  </div>
+              <div class="col-item__body">
+                <div class="col-item__title">Inovative Ideas</div>
+                <div class="col-item__description">
+                  Quisque luctus, quam eget molestie com-modo, lacus purus cursus purus, nec ruturm tellus dolor id lorem.
                 </div>
               </div>
             </div>
-            <div class="advantages__column third-col">
-              <div class="advantages__column__item">
-                <div class="col-item__icon">
-                  <img src="./assets/images/love_is_the_answer_icon.png" alt="123" height="59" width="59">
-                </div>
-                <div class="col-item__body">
-                  <div class="col-item__title">Love Is The Answer</div>
-                  <div class="col-item__description">
-                    Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequal felis. Quisque condimentum
-                  </div>
+            <div class="advantages__column__item">
+              <div class="col-item__icon">
+                <img src="./assets/images/love_is_the_answer_icon.png" alt="123" height="59" width="59">
+              </div>
+              <div class="col-item__body">
+                <div class="col-item__title">Love Is The Answer</div>
+                <div class="col-item__description">
+                  Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequal felis. Quisque condimentum
                 </div>
               </div>
-              <div class="advantages__column__item">
-                <div class="col-item__icon">
-                  <img src="./assets/images/feel_like_a_star_icon.png" alt="123" height="59" width="59">
+            </div>
+            <div class="advantages__column__item">
+              <div class="col-item__icon">
+                <img src="./assets/images/responsive_layout_icon.png" alt="123" height="59" width="59">
+              </div>
+              <div class="col-item__body">
+                <div class="col-item__title">Responsive Layout</div>
+                <div class="col-item__description">
+                  Sed porttitor placerat rhoncus. In at nunc tellus. Maecenas blandit nunc ligula. Prae-sent elit leo.
                 </div>
-                <div class="col-item__body">
-                  <div class="col-item__title">Feel Like A Star</div>
-                  <div class="col-item__description">
-                    Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus.
-                  </div>
+              </div>
+            </div>
+            <div class="advantages__column__item">
+              <div class="col-item__icon">
+                <img src="./assets/images/support_icon.png" alt="123" height="59" width="59">
+              </div>
+              <div class="col-item__body">
+                <div class="col-item__title">24 / 7 Support</div>
+                <div class="col-item__description">
+                  Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. Nulla a sem erat. Pellen-tesque egestas venenatis lorem.
+                </div>
+              </div>
+            </div>
+            <div class="advantages__column__item">
+              <div class="col-item__icon">
+                <img src="./assets/images/feel_like_a_star_icon.png" alt="123" height="59" width="59">
+              </div>
+              <div class="col-item__body">
+                <div class="col-item__title">Feel Like A Star</div>
+                <div class="col-item__description">
+                  Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus.
                 </div>
               </div>
             </div>
@@ -186,18 +207,18 @@
             </ul>
           </div>
           <div class="portfolio__gallery">
-            <div class="gallery__item item1"><img src="./assets/images/portfolio_images/portfolio_img_1.png" alt="portfolio image" width="220" height="187"></div>
-            <div class="gallery__item item2"><img src="./assets/images/portfolio_images/portfolio_img_2.png" alt="portfolio image" width="220" height="187"></div>
-            <div class="gallery__item item3"><img src="./assets/images/portfolio_images/portfolio_img_3.png" alt="portfolio image" width="220" height="187"></div>
-            <div class="gallery__item item4"><img src="./assets/images/portfolio_images/portfolio_img_4.png" alt="portfolio image" width="220" height="187"></div>
-            <div class="gallery__item item5"><img src="./assets/images/portfolio_images/portfolio_img_5.png" alt="portfolio image" width="220" height="187"></div>
-            <div class="gallery__item item6"><img src="./assets/images/portfolio_images/portfolio_img_6.png" alt="portfolio image" width="220" height="187"></div>
-            <div class="gallery__item item7"><img src="./assets/images/portfolio_images/portfolio_img_7.png" alt="portfolio image" width="220" height="187"></div>
-            <div class="gallery__item item8"><img src="./assets/images/portfolio_images/portfolio_img_8.png" alt="portfolio image" width="220" height="187"></div>
-            <div class="gallery__item item9"><img src="./assets/images/portfolio_images/portfolio_img_9.png" alt="portfolio image" width="220" height="187"></div>
-            <div class="gallery__item item10"><img src="./assets/images/portfolio_images/portfolio_img_10.png" alt="portfolio image" width="220" height="187"></div>
-            <div class="gallery__item item11"><img src="./assets/images/portfolio_images/portfolio_img_11.png" alt="portfolio image" width="220" height="187"></div>
-            <div class="gallery__item item12"><img src="./assets/images/portfolio_images/portfolio_img_12.png" alt="portfolio image" width="220" height="187"></div>
+            <div class="gallery__item item1"><img src="./assets/images/portfolio_images/portfolio_img_1.png" alt="portfolio image" ></div>
+            <div class="gallery__item item2"><img src="./assets/images/portfolio_images/portfolio_img_2.png" alt="portfolio image" ></div>
+            <div class="gallery__item item3"><img src="./assets/images/portfolio_images/portfolio_img_3.png" alt="portfolio image" ></div>
+            <div class="gallery__item item4"><img src="./assets/images/portfolio_images/portfolio_img_4.png" alt="portfolio image" ></div>
+            <div class="gallery__item item5"><img src="./assets/images/portfolio_images/portfolio_img_5.png" alt="portfolio image" ></div>
+            <div class="gallery__item item6"><img src="./assets/images/portfolio_images/portfolio_img_6.png" alt="portfolio image" ></div>
+            <div class="gallery__item item7"><img src="./assets/images/portfolio_images/portfolio_img_7.png" alt="portfolio image" ></div>
+            <div class="gallery__item item8"><img src="./assets/images/portfolio_images/portfolio_img_8.png" alt="portfolio image" ></div>
+            <div class="gallery__item item9"><img src="./assets/images/portfolio_images/portfolio_img_9.png" alt="portfolio image" ></div>
+            <div class="gallery__item item10"><img src="./assets/images/portfolio_images/portfolio_img_10.png" alt="portfolio image" ></div>
+            <div class="gallery__item item11"><img src="./assets/images/portfolio_images/portfolio_img_11.png" alt="portfolio image" ></div>
+            <div class="gallery__item item12"><img src="./assets/images/portfolio_images/portfolio_img_12.png" alt="portfolio image" ></div>
           </div>
         </div>
       </div>
@@ -215,7 +236,7 @@
           </div>
           <div class="about-us__team">
             <div class="team-member__column">
-              <div class="team-member__photo"><img src="./assets/images/about_us_images/team_member_1.jpg" alt="photo" width="300" height="300"></div>
+              <div class="team-member__photo"><img src="./assets/images/about_us_images/team_member_1.jpg" alt="photo"></div>
               <div class="team-member__name column-title">Adam Jensen</div>
               <div class="team-member__about column-description">Quisque luctus,quam eget molestie commodo,lacus purus cursus purus, nec rutrum tellus dolor id lorem.</div>
               <div class="team-member__social-link">
@@ -226,7 +247,7 @@
               </div>
             </div>
             <div class="team-member__column">
-              <div class="team-member__photo"><img src="./assets/images/about_us_images/team_member_2.jpg" alt="photo" width="300" height="300"></div>
+              <div class="team-member__photo"><img src="./assets/images/about_us_images/team_member_2.jpg" alt="photo"></div>
               <div class="team-member__name column-title">Desmond Miles</div>
               <div class="team-member__about column-description">Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</div>
               <div class="team-member__social-link">
@@ -237,7 +258,7 @@
               </div>
             </div>
             <div class="team-member__column">
-              <div class="team-member__photo"><img src="./assets/images/about_us_images/team_member_3.jpg" alt="photo" width="300" height="300"></div>
+              <div class="team-member__photo"><img src="./assets/images/about_us_images/team_member_3.jpg" alt="photo"></div>
               <div class="team-member__name column-title">Scolara Visari</div>
               <div class="team-member__about column-description">Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.</div>
               <div class="team-member__social-link">
@@ -269,7 +290,7 @@
                 <input type="email" id="email" name="email" value="" placeholder="Email (Required)" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" >
                 <input type="text" id="subject" name="subject" value="" placeholder="Subject" >
                 <textarea name="projectDetail" id="description" placeholder="Describe your project in detail..."></textarea>
-                <button class="submit-btn" id="send-btn">Send</button>
+                <button class="submit-btn" id="send-btn">SEND</button>
               </form>
             </div>
             <div class="quote__contact-info">
@@ -311,7 +332,7 @@
     <footer>
       <div class="content-wrapper">
         <div class="footer">
-          <span>© Copyright 2013</span>
+          <span class="footer_copyright">© Copyright 2013</span>
           <ul class="footer__social-links">
             <li class="social-link_icon">
               <img src="./assets/images/about_us_images/social_icon_facebook.png" alt="facebook icon" width="32" height="32">
