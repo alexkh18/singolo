@@ -1,6 +1,7 @@
 const HEADER_NAV_MENU = document.getElementById('header-nav');
 const HAMBURGER_NAV_MENU = document.getElementById('hamburger-nav');
 const HEADER_NAV_MENU_ANCHORS = document.querySelectorAll('.header-nav a[href*="#"]');
+const HAMBURGER_NAV_MENU_ANCHORS = document.querySelectorAll('.hamburger-nav a[href*="#"]');
 
 function removeActiveClassFromAllNavLinks(navMenuElem) {
   navMenuElem.querySelectorAll('.nav-link').forEach(elem => elem.classList.remove('active'));
@@ -14,36 +15,40 @@ function activateHeaderNavLinkOnClick(navMenuElem) {
 }
 
 function activateCurrHeaderNavLinkOnScroll(navMenuId, navMenuElem) {
-  const sectionOffsetYPosition = new Map();
-  document.querySelectorAll('main > section').forEach( elem => {
-    sectionOffsetYPosition.set(elem.id, elem.offsetTop);
-  });
+  document.querySelector('#header-nav > li > a[href="#slider-section"]').classList.add('active');
+  document.querySelector('#hamburger-nav > li > a[href="#slider-section"]').classList.add('active');
 
-  document.querySelector(`#${navMenuId} > li > a[href="#home"]`).classList.add('active');
   window.addEventListener('scroll', () => {
-    removeActiveClassFromAllNavLinks(navMenuElem);
-    document.querySelector(`#${navMenuId} > li > a[href="#home"]`).classList.add('active');
-    if (window.pageYOffset >= sectionOffsetYPosition.get('our-services-section')) {
+    const sectionOffsetYPosition = new Map();
+    document.querySelectorAll('main > section').forEach( elem => {
+      sectionOffsetYPosition.set(elem.id, elem.offsetTop);
+    });
+
+    if (window.pageYOffset <= 95) {
+      removeActiveClassFromAllNavLinks(navMenuElem);
+      document.querySelector(`#${navMenuId} > li > a[href="#slider-section"]`).classList.add('active');
+    }
+    if (window.pageYOffset >= sectionOffsetYPosition.get('our-services-section') - 95) {
       removeActiveClassFromAllNavLinks(navMenuElem);
       document.querySelector(`#${navMenuId} > li > a[href="#our-services-section"]`).classList.add('active');
     }
-    if (window.pageYOffset >= sectionOffsetYPosition.get('portfolio-section')) {
+    if (window.pageYOffset >= sectionOffsetYPosition.get('portfolio-section') - 95) {
       removeActiveClassFromAllNavLinks(navMenuElem);
       document.querySelector(`#${navMenuId} > li > a[href="#portfolio-section"]`).classList.add('active');
     }
-    if (window.pageYOffset >= sectionOffsetYPosition.get('about-us-section')) {
+    if (window.pageYOffset >= sectionOffsetYPosition.get('about-us-section') - 95) {
       removeActiveClassFromAllNavLinks(navMenuElem);
       document.querySelector(`#${navMenuId} > li > a[href="#about-us-section"]`).classList.add('active');
     }
-    if (window.pageYOffset === document.body.offsetHeight - window.innerHeight) {
+    if (window.pageYOffset === document.body.offsetHeight - window.innerHeight - 95) {
       removeActiveClassFromAllNavLinks(navMenuElem);
       document.querySelector(`#${navMenuId} > li > a[href="#quote-section"]`).classList.add('active');
     }
   });
 }
 
-function animatedScrollingForAnchorsNavigation() {
-  HEADER_NAV_MENU_ANCHORS.forEach(el => {
+function animatedScrollingForAnchorsNavigation(navMenuElem) {
+  navMenuElem.forEach(el => {
     el.addEventListener('click', (event) => {
       event.preventDefault();
       const sectionId = el.getAttribute('href').substr(1);
@@ -227,7 +232,8 @@ function addBorderForPortfolioImg() {
 
 activateHeaderNavLinkOnClick(HEADER_NAV_MENU);
 activateHeaderNavLinkOnClick(HAMBURGER_NAV_MENU);
-animatedScrollingForAnchorsNavigation();
+animatedScrollingForAnchorsNavigation(HEADER_NAV_MENU_ANCHORS);
+animatedScrollingForAnchorsNavigation(HAMBURGER_NAV_MENU_ANCHORS);
 activateCurrHeaderNavLinkOnScroll('header-nav', HEADER_NAV_MENU);
 activateCurrHeaderNavLinkOnScroll('hamburger-nav', HAMBURGER_NAV_MENU);
 slideSliderSectionContent(SLIDER_CONTROL_PREV);
