@@ -1,42 +1,43 @@
 const HEADER_NAV_MENU = document.getElementById('header-nav');
+const HAMBURGER_NAV_MENU = document.getElementById('hamburger-nav');
 const HEADER_NAV_MENU_ANCHORS = document.querySelectorAll('.header-nav a[href*="#"]');
 
-function removeActiveClassFromAllHeaderNavLinks() {
-  HEADER_NAV_MENU.querySelectorAll('.nav-link').forEach(elem => elem.classList.remove('active'));
+function removeActiveClassFromAllNavLinks(navMenuElem) {
+  navMenuElem.querySelectorAll('.nav-link').forEach(elem => elem.classList.remove('active'));
 }
 
-function activateHeaderNavLinkOnClick() {
-  HEADER_NAV_MENU.addEventListener('click', (event) => {
-    removeActiveClassFromAllHeaderNavLinks();
+function activateHeaderNavLinkOnClick(navMenuElem) {
+  navMenuElem.addEventListener('click', (event) => {
+    removeActiveClassFromAllNavLinks(navMenuElem);
     event.target.classList.add('active');
   });
 }
 
-function activateCurrHeaderNavLinkOnScroll() {
+function activateCurrHeaderNavLinkOnScroll(navMenuId, navMenuElem) {
   const sectionOffsetYPosition = new Map();
   document.querySelectorAll('main > section').forEach( elem => {
     sectionOffsetYPosition.set(elem.id, elem.offsetTop);
   });
 
-  document.querySelector('a[href="#home"]').classList.add('active');
+  document.querySelector(`#${navMenuId} > li > a[href="#home"]`).classList.add('active');
   window.addEventListener('scroll', () => {
-    removeActiveClassFromAllHeaderNavLinks();
-    document.querySelector('a[href="#home"]').classList.add('active');
+    removeActiveClassFromAllNavLinks(navMenuElem);
+    document.querySelector(`#${navMenuId} > li > a[href="#home"]`).classList.add('active');
     if (window.pageYOffset >= sectionOffsetYPosition.get('our-services-section')) {
-      removeActiveClassFromAllHeaderNavLinks();
-      document.querySelector('a[href="#our-services-section"]').classList.add('active');
+      removeActiveClassFromAllNavLinks(navMenuElem);
+      document.querySelector(`#${navMenuId} > li > a[href="#our-services-section"]`).classList.add('active');
     }
     if (window.pageYOffset >= sectionOffsetYPosition.get('portfolio-section')) {
-      removeActiveClassFromAllHeaderNavLinks();
-      document.querySelector('a[href="#portfolio-section"]').classList.add('active');
+      removeActiveClassFromAllNavLinks(navMenuElem);
+      document.querySelector(`#${navMenuId} > li > a[href="#portfolio-section"]`).classList.add('active');
     }
     if (window.pageYOffset >= sectionOffsetYPosition.get('about-us-section')) {
-      removeActiveClassFromAllHeaderNavLinks();
-      document.querySelector('a[href="#about-us-section"]').classList.add('active');
+      removeActiveClassFromAllNavLinks(navMenuElem);
+      document.querySelector(`#${navMenuId} > li > a[href="#about-us-section"]`).classList.add('active');
     }
     if (window.pageYOffset === document.body.offsetHeight - window.innerHeight) {
-      removeActiveClassFromAllHeaderNavLinks();
-      document.querySelector('a[href="#quote-section"]').classList.add('active');
+      removeActiveClassFromAllNavLinks(navMenuElem);
+      document.querySelector(`#${navMenuId} > li > a[href="#quote-section"]`).classList.add('active');
     }
   });
 }
@@ -224,9 +225,11 @@ function addBorderForPortfolioImg() {
   });
 }
 
-activateHeaderNavLinkOnClick();
-activateCurrHeaderNavLinkOnScroll();
+activateHeaderNavLinkOnClick(HEADER_NAV_MENU);
+activateHeaderNavLinkOnClick(HAMBURGER_NAV_MENU);
 animatedScrollingForAnchorsNavigation();
+activateCurrHeaderNavLinkOnScroll('header-nav', HEADER_NAV_MENU);
+activateCurrHeaderNavLinkOnScroll('hamburger-nav', HAMBURGER_NAV_MENU);
 slideSliderSectionContent(SLIDER_CONTROL_PREV);
 slideSliderSectionContent(SLIDER_CONTROL_NEXT);
 switchPhoneScreenState(VERTICAL_PHONE_BTN);
